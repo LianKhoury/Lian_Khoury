@@ -160,6 +160,8 @@ public class MainActivity extends AppCompatActivity {
        // preferences.edit().putString("password",registeredPassword).commit();
         Intent i_register = new Intent(this,RegisterActivity.class);
         startActivity(i_register);
+        Toast.makeText(this, "WELCOME!", Toast.LENGTH_LONG).show();
+
     }
 
 

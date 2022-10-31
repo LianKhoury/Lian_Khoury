@@ -4,25 +4,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/books_quote1"
     android:layout_height="match_parent"
     tools:context="WelcomeActivity">
 
-
     <TextView
         android:id="@+id/textView_WelcomePage"
-        android:layout_width="153dp"
-        android:layout_height="45dp"
-        android:gravity="center"
-        android:text="Welcome!"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="you're only one book away from a good mood :)"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        tools:layout_editor_absoluteX="173dp"
+        tools:layout_editor_absoluteY="66dp"
+        />
 
     <TextView
         android:id="@+id/textView2_WelcomePage"
@@ -31,10 +27,10 @@
         android:text="Please select a book genre  "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.102" />
+        app:layout_constraintVertical_bias="0.224"
+        />
 
     <ListView
         android:id="@+id/ListView_Books"
@@ -45,8 +41,9 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85"
-        />
+        app:layout_constraintVertical_bias="0.792" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
