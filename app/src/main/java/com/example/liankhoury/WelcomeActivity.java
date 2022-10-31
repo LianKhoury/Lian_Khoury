@@ -62,6 +62,8 @@ public class WelcomeActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(WelcomeActivity.this,"clicked item" + i + "" + arrayBookList.get(i).toString(),Toast.LENGTH_SHORT).show();
+
+
             }
         });
     }
