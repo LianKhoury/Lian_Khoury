@@ -2,6 +2,7 @@ package com.example.liankhoury;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -33,6 +34,7 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
+    @SuppressLint("SetTextI18n")
     public void Plus(View view) {
         if(editTextNumber1.getText().toString().equals(""))
             Toast.makeText(this,"Empty number1",Toast.LENGTH_LONG).show();

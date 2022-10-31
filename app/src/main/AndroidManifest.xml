@@ -14,27 +14,6 @@
         android:theme="@style/Theme.LianKhoury"
         tools:targetApi="31">
         <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AboutActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LogOutActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SittingsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HelpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -43,6 +22,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AboutActivity"
+            android:exported="false"/>
+        <activity android:name=".WelcomeActivity"
+            android:exported="false"/>
+        <activity android:name=".RegisterActivity"
+            android:exported="false"/>
+        <activity android:name=".HomeActivity"
+            android:exported="false"/>
+        <activity android:name=".LogOutActivity"
+            android:exported="false"/>
+        <activity android:name=".HelpActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

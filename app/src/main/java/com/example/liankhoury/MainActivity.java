@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttonLogin = findViewById(R.id.buttonLogin);
         buttonRegister = findViewById(R.id.buttonRegister);
-        // creates a p
+        // creates a preferences
         preferences = getSharedPreferences("Userinfo", 0);
 
     }//onCreate
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //handle options menu click events
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -139,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             String registeredPassword = editTextPassword.getText().toString();
 
             if (input_mail.equals(registeredMail) && input_password.equals(registeredPassword)) {
-                Intent i_mail = new Intent(this, HomeActivity.class);
+                Intent i_mail = new Intent(this, WelcomeActivity.class);
                 startActivity(i_mail);
             }
             else {
