@@ -14,6 +14,9 @@
         android:theme="@style/Theme.LianKhoury"
         tools:targetApi="31">
         <activity
+            android:name=".ListOne"
+            android:exported="false" />
+        <activity
             android:name=".ListZero"
             android:exported="false" />
         <activity
