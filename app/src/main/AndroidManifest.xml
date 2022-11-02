@@ -14,22 +14,22 @@
         android:theme="@style/Theme.LianKhoury"
         tools:targetApi="31">
         <activity
-            android:name=".ListFiveActivity"
+            android:name=".CrimebooksActivity"
             android:exported="false" />
         <activity
-            android:name=".ListFourActivity"
+            android:name=".FanbooksActivity"
             android:exported="false" />
         <activity
-            android:name=".ListThreeActivity"
+            android:name=".RealisticbooksActivity"
             android:exported="false" />
         <activity
-            android:name=".ListTwoActivity"
+            android:name=".HistoricalbooksActivity"
             android:exported="false" />
         <activity
-            android:name=".ListOneActivity"
+            android:name=".SciencebooksActivity"
             android:exported="false" />
         <activity
-            android:name=".ListZeroActivity"
+            android:name=".FantasybooksActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

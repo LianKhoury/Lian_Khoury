@@ -64,55 +64,55 @@ public class WelcomeActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(WelcomeActivity.this,"clicked item" + i + "" + arrayBookList.get(i).toString(),Toast.LENGTH_SHORT).show();
                 if (i == 0) {
-                    Intent i_BookList = new Intent(WelcomeActivity.this,ListZeroActivity.class);
+                    Intent i_BookList = new Intent(WelcomeActivity.this, FantasybooksActivity.class);
                     startActivity(i_BookList);
                 }
                 if (i == 1) {
-                    Intent i_BookList = new Intent(WelcomeActivity.this,ListOneActivity.class);
+                    Intent i_BookList = new Intent(WelcomeActivity.this, SciencebooksActivity.class);
                     startActivity(i_BookList);
                 }
                 if (i == 2) {
-                    Intent i_BookList = new Intent(WelcomeActivity.this,ListOneActivity.class);
+                    Intent i_BookList = new Intent(WelcomeActivity.this, SciencebooksActivity.class);
                     startActivity(i_BookList);
                 }
                 if (i == 3) {
-                    Intent i_BookList = new Intent(WelcomeActivity.this,ListOneActivity.class);
+                    Intent i_BookList = new Intent(WelcomeActivity.this, SciencebooksActivity.class);
                     startActivity(i_BookList);
                 }
                 if (i == 4) {
-                    Intent i_BookList = new Intent(WelcomeActivity.this,ListOneActivity.class);
+                    Intent i_BookList = new Intent(WelcomeActivity.this, SciencebooksActivity.class);
                     startActivity(i_BookList);
                 }
                 if (i == 5) {
-                    Intent i_BookList = new Intent(WelcomeActivity.this,ListOneActivity.class);
+                    Intent i_BookList = new Intent(WelcomeActivity.this, SciencebooksActivity.class);
                     startActivity(i_BookList);
                 }
                 if (i == 6) {
-                    Intent i_BookList = new Intent(WelcomeActivity.this,ListOneActivity.class);
+                    Intent i_BookList = new Intent(WelcomeActivity.this, SciencebooksActivity.class);
                     startActivity(i_BookList);
                 }
                 if (i == 6) {
-                    Intent i_BookList = new Intent(WelcomeActivity.this,ListOneActivity.class);
+                    Intent i_BookList = new Intent(WelcomeActivity.this, SciencebooksActivity.class);
                     startActivity(i_BookList);
                 }
                 if (i == 7) {
-                    Intent i_BookList = new Intent(WelcomeActivity.this,ListOneActivity.class);
+                    Intent i_BookList = new Intent(WelcomeActivity.this, SciencebooksActivity.class);
                     startActivity(i_BookList);
                 }
                 if (i == 8) {
-                    Intent i_BookList = new Intent(WelcomeActivity.this,ListOneActivity.class);
+                    Intent i_BookList = new Intent(WelcomeActivity.this, SciencebooksActivity.class);
                     startActivity(i_BookList);
                 }
                 if (i == 9) {
-                    Intent i_BookList = new Intent(WelcomeActivity.this,ListOneActivity.class);
+                    Intent i_BookList = new Intent(WelcomeActivity.this, SciencebooksActivity.class);
                     startActivity(i_BookList);
                 }
                 if (i == 10) {
-                    Intent i_BookList = new Intent(WelcomeActivity.this,ListOneActivity.class);
+                    Intent i_BookList = new Intent(WelcomeActivity.this, SciencebooksActivity.class);
                     startActivity(i_BookList);
                 }
                 if (i == 11) {
-                    Intent i_BookList = new Intent(WelcomeActivity.this,ListOneActivity.class);
+                    Intent i_BookList = new Intent(WelcomeActivity.this, SciencebooksActivity.class);
                     startActivity(i_BookList);
                 }
 
