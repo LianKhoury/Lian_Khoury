@@ -23,7 +23,7 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        listView_Books = (ListView) findViewById(R.id.ListView_Books);
+        //listView_Books = (ListView) findViewById(R.id.ListView_Books);
 
         //make an array list
         ArrayList<String> arrayBookList = new ArrayList<>();

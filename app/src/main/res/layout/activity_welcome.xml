@@ -52,16 +52,14 @@
         />
 
     <GridLayout
-        android:layout_width="436dp"
-        android:layout_height="493dp"
+        android:layout_width="441dp"
+        android:layout_height="624dp"
         android:layout_below="@+id/TitleView"
+        android:layout_margin="20dp"
         android:columnCount="2"
         android:rowCount="3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintVertical_bias="0.672">
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
