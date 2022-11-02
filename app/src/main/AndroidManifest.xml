@@ -23,7 +23,7 @@
             android:name=".HorrorBooksActivity"
             android:exported="false" />
         <activity
-            android:name=".ThillerBooksActivity"
+            android:name=".ThrillerBooksActivity"
             android:exported="false" />
         <activity
             android:name=".MysteryBooksActivity"
