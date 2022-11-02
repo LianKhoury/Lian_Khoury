@@ -64,7 +64,7 @@ public class WelcomeActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(WelcomeActivity.this,"clicked item" + i + "" + arrayBookList.get(i).toString(),Toast.LENGTH_SHORT).show();
                 if (i == 0) {
-                    Intent i_BookList = new Intent(this, ListZero.class);
+                    Intent i_BookList = new Intent(WelcomeActivity.this,ListZeroActivity.class);
                     startActivity(i_BookList);
                 }
 

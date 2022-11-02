@@ -17,7 +17,7 @@
             android:name=".ListOne"
             android:exported="false" />
         <activity
-            android:name=".ListZero"
+            android:name=".ListZeroActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
