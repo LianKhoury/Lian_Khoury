@@ -9,6 +9,6 @@ public class SciencebooksActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_one);
+        setContentView(R.layout.activity_science_books);
     }
 }

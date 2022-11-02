@@ -9,6 +9,6 @@ public class RealisticbooksActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_three);
+        setContentView(R.layout.activity_realistic_books);
     }
 }
