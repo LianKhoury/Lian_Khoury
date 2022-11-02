@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class FantasybooksActivity extends AppCompatActivity {
+public class HorrorBooksActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fantasy_books);
+        setContentView(R.layout.activity_horror_books);
     }
 }

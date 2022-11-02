@@ -14,37 +14,37 @@
         android:theme="@style/Theme.LianKhoury"
         tools:targetApi="31">
         <activity
-            android:name=".ClassicbooksActivity"
+            android:name=".ClassicBooksActivity"
             android:exported="false" />
         <activity
-            android:name=".HumorbooksActivity"
+            android:name=".HumorBooksActivity"
             android:exported="false" />
         <activity
-            android:name=".HorrorbooksActivity"
+            android:name=".HorrorBooksActivity"
             android:exported="false" />
         <activity
-            android:name=".ThillerbooksActivity"
+            android:name=".ThillerBooksActivity"
             android:exported="false" />
         <activity
-            android:name=".MysterybooksActivity"
+            android:name=".MysteryBooksActivity"
             android:exported="false" />
         <activity
-            android:name=".CrimebooksActivity"
+            android:name=".CrimeBooksActivity"
             android:exported="false" />
         <activity
-            android:name=".FanbooksActivity"
+            android:name=".FanBooksActivity"
             android:exported="false" />
         <activity
-            android:name=".RealisticbooksActivity"
+            android:name=".RealisticBooksActivity"
             android:exported="false" />
         <activity
-            android:name=".HistoricalbooksActivity"
+            android:name=".HistoricalBooksActivity"
             android:exported="false" />
         <activity
-            android:name=".SciencebooksActivity"
+            android:name=".ScienceBooksActivity"
             android:exported="false" />
         <activity
-            android:name=".FantasybooksActivity"
+            android:name=".FantasyBooksActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

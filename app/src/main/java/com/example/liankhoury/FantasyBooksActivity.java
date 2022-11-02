@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ThillerbooksActivity extends AppCompatActivity {
+public class FantasyBooksActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_thiller_books);
+        setContentView(R.layout.activity_fantasy_books);
     }
 }
