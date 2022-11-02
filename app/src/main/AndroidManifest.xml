@@ -14,7 +14,19 @@
         android:theme="@style/Theme.LianKhoury"
         tools:targetApi="31">
         <activity
-            android:name=".ListOne"
+            android:name=".ListFiveActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListFourActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListThreeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListTwoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListOneActivity"
             android:exported="false" />
         <activity
             android:name=".ListZeroActivity"
