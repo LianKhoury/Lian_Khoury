@@ -50,11 +50,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.792"
-        />
+        >
 
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width=""
-        android:layout_height=""
-        />
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </ListView>
 
 </LinearLayout>
