@@ -6,8 +6,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="10"
     tools:context="WelcomeActivity">
 
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="odp"
+
+    <TextView
+        android:id="@+id/textGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="GRID LAYOUT"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+
+</LinearLayout>
     <TextView
         android:id="@+id/textView_WelcomePage"
         ontFamily=""
@@ -50,11 +66,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.792"
-        >
-
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </ListView>
+        />
 
 </LinearLayout>
