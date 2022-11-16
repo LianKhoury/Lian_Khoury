@@ -6,4 +6,5 @@
     <string name="register">register</string>
     <string name="grid_layout">GRID LAYOUT</string>
     <string name="fantasy_books">Fantasy Books</string>
+    <string name="fable_books" />
 </resources>
