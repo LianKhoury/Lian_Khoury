@@ -4,4 +4,5 @@
     <string name="about">About</string>
     <string name="home">Home</string>
     <string name="register">register</string>
+    <string name="grid_layout">GRID LAYOUT</string>
 </resources>
