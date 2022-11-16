@@ -62,7 +62,7 @@
                 tools:ignore="UseCompoundDrawables">
 
                 <ImageView
-                    android:src="@drawable/fablebooksimg"
+                    android:src="@drawable/fantasybooksimg"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
                     />
 
                 <TextView
-                    android:text="@string/fantasy_books"
+                    android:text="@string/fable_books"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"
