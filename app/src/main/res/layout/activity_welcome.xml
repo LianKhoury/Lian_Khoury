@@ -38,6 +38,7 @@
 
 
     <!-- Row one -->
+
     <!-- column 1 -->
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -57,7 +58,8 @@
                 android:layout_width="wrap_content"
                 android:orientation="vertical"
                 android:layout_margin="16dp"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:src="@drawable/fablebooksimg"
@@ -67,11 +69,54 @@
                     />
 
                 <TextView
-                    android:text="Fantasy Books"
+                    android:text="@string/fantasy_books"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    <!-- column 2 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp"
+            >
+
+            <LinearLayout
+
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="16dp"
+                android:layout_height="wrap_content"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:src="@drawable/fablebooksimg"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:text="@string/fantasy_books"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     />
