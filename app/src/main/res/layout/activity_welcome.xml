@@ -12,18 +12,21 @@
     <RelativeLayout
         android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="odp"
+        android:layout_height="odp">
 
-    <TextView
-        android:id="@+id/textGrid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="GRID LAYOUT"
-        android:textColor="@color/white"
-        android:textSize="34sp"
+        <TextView
+            android:id="@+id/textGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="GRID LAYOUT"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+        />
+    </RelativeLayout>
 
-</LinearLayout>
+
+
     <TextView
         android:id="@+id/textView_WelcomePage"
         ontFamily=""
