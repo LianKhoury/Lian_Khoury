@@ -25,7 +25,7 @@
         />
     </RelativeLayout>
 
-    <GridLayout
+    <LinearLayout
 
         android:columnCount="4"
         android:rowCount="5"
@@ -40,7 +40,7 @@
     <!-- Row one -->
 
     <!-- column 1 -->
-        <androidx.cardview.widget.CardView
+       <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -69,8 +69,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />
-            </linearLayout>
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
 
     <!-- column 2 -->
         <androidx.cardview.widget.CardView
@@ -114,8 +115,7 @@
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
-    </GridLayout>
+    </LinearLayout>
 
 
 
-</LinearLayout>
