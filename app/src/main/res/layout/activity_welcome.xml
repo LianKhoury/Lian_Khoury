@@ -16,7 +16,7 @@
         >
         <TextView
             android:id="@+id/textGrid"
-            android:text="GRID LAYOUT"
+            android:text="Book Genres"
             android:textSize="34sp"
             android:textColor="@color/black"
             android:layout_centerInParent="true"
