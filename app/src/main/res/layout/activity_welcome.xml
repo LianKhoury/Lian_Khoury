@@ -110,7 +110,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Fable Books"
+                    android:text="@string/Fable_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -149,7 +149,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Fairytale Books"
+                    android:text="@string/fairytale_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -188,13 +188,13 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Romance Books"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/romance_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -229,7 +229,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Classic Books"
+                    android:text="@string/classic_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -268,7 +268,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Comic Books"
+                    android:text="@string/comic_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -307,7 +307,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Crime Books"
+                    android:text="@string/crime_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -346,7 +346,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Drama Books"
+                    android:text="@string/drama_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -387,7 +387,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Detective Books"
+                    android:text="@string/detective_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -426,7 +426,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Graphic Novel Books"
+                    android:text="@string/graphic_novel_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -465,7 +465,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Horror Books"
+                    android:text="@string/horror_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -504,7 +504,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Legend Books"
+                    android:text="@string/legend_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -545,7 +545,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Mystery Books"
+                    android:text="@string/mystery_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -584,7 +584,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Mythology Books"
+                    android:text="@string/mythology_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -623,7 +623,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Poetry Books"
+                    android:text="@string/poetry_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -662,13 +662,14 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Religion Books"
+                    android:text="@string/religion_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    />
 
             </LinearLayout>
 
@@ -703,7 +704,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Science Books"
+                    android:text="@string/science_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -742,7 +743,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Science Fiction Books"
+                    android:text="@string/science_fiction_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -781,7 +782,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Thriller Books"
+                    android:text="@string/thriller_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
@@ -820,7 +821,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Adventure Books"
+                    android:text="@string/adventure_books"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"

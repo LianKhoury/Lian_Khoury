@@ -8,4 +8,23 @@
     <string name="fantasy_books">Fantasy Books</string>
     <string name="fable_books" />
     <string name="book_genres">Book Genres</string>
+    <string name="romance_books">Romance Books</string>
+    <string name="fairytale_books">Fairytale Books</string>
+    <string name="classic_books">Classic Books</string>
+    <string name="comic_books">Comic Books</string>
+    <string name="crime_books">Crime Books</string>
+    <string name="drama_books">Drama Books</string>
+    <string name="detective_books">Detective Books</string>
+    <string name="graphic_novel_books">Graphic Novel Books</string>
+    <string name="horror_books">Horror Books</string>
+    <string name="legend_books">Legend Books</string>
+    <string name="mystery_books">Mystery Books</string>
+    <string name="mythology_books">Mythology Books</string>
+    <string name="poetry_books">Poetry Books</string>
+    <string name="religion_books">Religion Books</string>
+    <string name="science_books">Science Books</string>
+    <string name="science_fiction_books">Science Fiction Books</string>
+    <string name="thriller_books">Thriller Books</string>
+    <string name="adventure_books">Adventure Books</string>
+    <string name="Fable_books">Fable Books</string>
 </resources>
