@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             String registeredPassword = editTextPassword.getText().toString();
 
             if (input_mail.equals(registeredMail) && input_password.equals(registeredPassword)) {
-                Intent i_mail = new Intent(this, WelcomeActivity.class);
+                Intent i_mail = new Intent(this,WelcomeActivity.class);
                 startActivity(i_mail);
             }
             else {
