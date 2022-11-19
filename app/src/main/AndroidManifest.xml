@@ -14,6 +14,15 @@
         android:theme="@style/Theme.LianKhoury"
         tools:targetApi="31">
         <activity
+            android:name=".ReligionBooksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScienceFictionBooksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetectiveBooksActivity"
+            android:exported="false" />
+        <activity
             android:name=".GraphicalBooksActivity"
             android:exported="false" />
         <activity
