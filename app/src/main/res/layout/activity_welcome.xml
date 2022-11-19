@@ -22,7 +22,8 @@
             android:layout_centerInParent="true"
             android:text="@string/book_genres"
             android:textColor="@color/black"
-            android:textSize="34sp" />
+            android:fontFamily="serif"
+            android:textSize="32sp" />
 
         <TextView
             android:layout_width="wrap_content"
