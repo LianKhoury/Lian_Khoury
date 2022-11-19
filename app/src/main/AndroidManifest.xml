@@ -35,9 +35,6 @@
             android:name=".LegendBooksActivity"
             android:exported="false" />
         <activity
-            android:name=".ShortstoryBooksActivity"
-            android:exported="false" />
-        <activity
             android:name=".FairytaleBooksActivity"
             android:exported="false" />
         <activity
@@ -56,9 +53,6 @@
             android:name=".ClassicBooksActivity"
             android:exported="false" />
         <activity
-            android:name=".HumorBooksActivity"
-            android:exported="false" />
-        <activity
             android:name=".HorrorBooksActivity"
             android:exported="false" />
         <activity
@@ -69,12 +63,6 @@
             android:exported="false" />
         <activity
             android:name=".CrimeBooksActivity"
-            android:exported="false" />
-        <activity
-            android:name=".FanBooksActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RealisticBooksActivity"
             android:exported="false" />
         <activity
             android:name=".HistoricalBooksActivity"
