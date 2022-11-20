@@ -23,7 +23,8 @@
             android:fontFamily="serif"
             android:text="@string/book_genres"
             android:textColor="@color/black"
-            android:textSize="32sp" />
+            android:textSize="32sp"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,7 +38,8 @@
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            />
 
     </RelativeLayout>
 
@@ -90,7 +92,8 @@
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="6sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    />
 
 
             </LinearLayout>
