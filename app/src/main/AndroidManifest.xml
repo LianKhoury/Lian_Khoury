@@ -14,6 +14,9 @@
         android:theme="@style/Theme.LianKhoury"
         tools:targetApi="31">
         <activity
+            android:name=".CameraActivity"
+            android:exported="false" />
+        <activity
             android:name=".ReligionBooksActivity"
             android:exported="false" />
         <activity
