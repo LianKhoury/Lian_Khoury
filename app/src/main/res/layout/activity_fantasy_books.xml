@@ -35,9 +35,10 @@
     <GridLayout
         android:id="@+id/GridW_fantasy"
         android:columnCount="3"
-        android:rowCount="7"
+        android:rowCount="10"
         android:alignmentMode="alignMargins"
         android:columnOrderPreserved="false"
+        android:rowOrderPreserved="false"
         android:layout_weight="8"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -1248,17 +1249,6 @@
 
         </androidx.cardview.widget.CardView>
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_row="0"
-            android:layout_column="20">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
-        </ScrollView>
 
     </GridLayout>
 

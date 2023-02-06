@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -32,14 +33,6 @@
             />
 
     </RelativeLayout>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" />
 
         <GridLayout
             android:id="@+id/GridW_classic"
@@ -47,9 +40,10 @@
             android:rowCount="10"
             android:alignmentMode="alignMargins"
             android:columnOrderPreserved="false"
+            android:rowOrderPreserved="false"
             android:layout_weight="8"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:padding="14dp"
             >
 
@@ -77,12 +71,12 @@
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/fantasybooksimg" />
 
                     <TextView
-                        android:id="@+id/fantasy_Books"
+                        android:id="@+id/classic_Books"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/fantasy_books"
@@ -1257,7 +1251,7 @@
             </androidx.cardview.widget.CardView>
 
         </GridLayout>
-    </ScrollView>
+
 </LinearLayout>
 
 
