@@ -33,7 +33,7 @@
 
     </RelativeLayout>
     <GridLayout
-        android:id="@+id/GridW"
+        android:id="@+id/GridW_fantasy"
         android:columnCount="3"
         android:rowCount="7"
         android:alignmentMode="alignMargins"
