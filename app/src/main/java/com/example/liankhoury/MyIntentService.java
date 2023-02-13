@@ -60,10 +60,10 @@ public class MyIntentService extends IntentService {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
         CharSequence name = getString(R.string.channel_name);
         String description = getString(R.string.channel_description);
-        int importance = NotificationManager.IMPORTANCE_DEFAULT;
-        NotificationChannel channel = new NotificationChannel(CHANNEL_ID,nane, importance);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+        NotificationChannel channel = new NotificationChannel(CHANNEL_ID,name, importance);
         channel.setDescription(description);
-        // Register the channel with the system; you cant change the importan
+        // Register the channel with the system; you cant change the important
         // or other notification behaviors after this
         NotificationManager notificationManager = getSystemService(NotificationManager.class);
 
