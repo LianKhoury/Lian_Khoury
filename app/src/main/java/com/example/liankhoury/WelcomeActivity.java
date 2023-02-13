@@ -3,6 +3,9 @@ package com.example.liankhoury;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +32,12 @@ public class WelcomeActivity extends AppCompatActivity {
 
         //set Event
         setSingleEvent(GridW);
+
+        Intent notification = new Intent(this,Receiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this,1,notification,PendingIntent.FLAG_UPDATE_CURRENT);
+
+        AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
+        alarmManager.setRepeating(AlarmManager.RTC,System.currentTimeMillis(), 3000, pendingIntent);
 
         }
 
