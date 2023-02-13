@@ -105,6 +105,15 @@
         <activity
             android:name=".HelpActivity"
             android:exported="false" />
+
+        <receiver android:name=".Receiver"
+            android:enabled="true"
+            android:exported="false"/>
+        
+        <service android:name=".MyIntentService"
+            android:enabled="true"
+            android:exported="false"/>
+
     </application>
 
 </manifest>
