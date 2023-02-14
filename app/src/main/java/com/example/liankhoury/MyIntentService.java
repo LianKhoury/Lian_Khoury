@@ -14,7 +14,7 @@ import androidx.core.app.NotificationManagerCompat;
 
 public class MyIntentService extends IntentService {
 
-    private static final String CHANNEL_ID = "CHANNEL 3";
+    private static final String CHANNEL_ID = "CHANNEL_3";
     private static final int REQUEST_CODE = 1;
     private static final int NOTIFICATION_ID = 1;
 
@@ -58,16 +58,16 @@ public class MyIntentService extends IntentService {
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-        CharSequence name = getString(R.string.channel_name);
-        String description = getString(R.string.channel_description);
+            CharSequence name = getString(R.string.channel_name);
+            String description = getString(R.string.channel_description);
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
-        NotificationChannel channel = new NotificationChannel(CHANNEL_ID,name, importance);
-        channel.setDescription(description);
-        // Register the channel with the system; you cant change the important
-        // or other notification behaviors after this
-        NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID,name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you cant change the important
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
 
-        notificationManager.createNotificationChannel(channel);
+            notificationManager.createNotificationChannel(channel);
 
         }
     }
