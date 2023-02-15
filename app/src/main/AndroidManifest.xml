@@ -16,6 +16,9 @@
         android:theme="@style/Theme.LianKhoury"
         tools:targetApi="31">
         <activity
+            android:name=".UserProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".CameraActivity"
             android:exported="false" />
         <activity
@@ -106,14 +109,15 @@
             android:name=".HelpActivity"
             android:exported="false" />
 
-        <receiver android:name=".Receiver"
+        <receiver
+            android:name=".Receiver"
             android:enabled="true"
-            android:exported="false"/>
-        
-        <service android:name=".MyIntentService"
-            android:enabled="true"
-            android:exported="false"/>
+            android:exported="false" />
 
+        <service
+            android:name=".MyIntentService"
+            android:enabled="true"
+            android:exported="false" />
     </application>
 
 </manifest>

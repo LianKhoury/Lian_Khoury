@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserProfileActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+
+            <ImageView
+                android:id="@+id/IMG_ViewID"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/noprofilepic" />
+            
+            <TextView
+                android:id="@+id/TextViewProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/IMG_ViewID"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:hint="Loading..."
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+        
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:padding="15dp"
+            android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/icon_profile"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/icon_profile" />
+
+        <TextView
+            android:id="@+id/T_VShowFullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/icon_profile"
+            android:layout_marginStart="50dp"
+            android:hint="Loading"
+            android:textSize="18sp" />
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/T_VShowFullName"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/darker_gray"
+            android:id="@+id/divider_name"/>
+
+        <ImageView
+            android:id="@+id/icon_email"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/divider_name"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/icon_email" />
+
+        <TextView
+            android:id="@+id/T_VShowEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider_name"
+            android:layout_alignStart="@id/icon_email"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:hint="Loading"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/T_VShowFullName"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/darker_gray"
+            android:id="@+id/divider_email"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>
