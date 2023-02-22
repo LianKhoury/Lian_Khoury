@@ -2,4 +2,5 @@
 <resources>
     <item name="icon_email" type="id" />
     <item name="icon_email" type="id" />
+    <item name="progressBar" type="id" />
 </resources>

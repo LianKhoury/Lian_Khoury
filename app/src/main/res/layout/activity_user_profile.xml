@@ -87,10 +87,37 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@id/T_VShowFullName"
+            android:layout_below="@id/T_VShowEmail"
             android:layout_marginTop="20dp"
             android:background="@android:color/darker_gray"
             android:id="@+id/divider_email"/>
+
+            <ImageView
+                android:id="@+id/icon_phone"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/divider_email"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/icon_phone" />
+
+            <TextView
+                android:id="@+id/T_VShowPhoneNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider_email"
+                android:layout_alignStart="@id/icon_phone"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="20dp"
+                android:hint="Loading"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/divider_phone"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/T_VShowEmail"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/darker_gray" />
 
         </RelativeLayout>
     </LinearLayout>
