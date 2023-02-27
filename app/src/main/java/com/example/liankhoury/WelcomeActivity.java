@@ -17,9 +17,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-
-
 public class WelcomeActivity extends AppCompatActivity {
+
 
     GridLayout GridW;
 
