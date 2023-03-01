@@ -1,6 +1,7 @@
 package com.example.liankhoury;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -47,10 +48,24 @@ public class UserProfileActivity extends AppCompatActivity {
         if (firebaseUser == null){
             Toast.makeText(UserProfileActivity.this, "Something went wrong! User's details are not available at the moment", Toast.LENGTH_LONG).show();
         } else {
+            checkIfEmailVertified(firebaseUser)
             progressBar.setVisibility(View.VISIBLE);
             showUserProfile(firebaseUser);
         }
     }
+
+    private void checkIfEmailVerified(FirebaseUser firebaseUser){
+        if(!firebaseUser.isEmailVerified()){
+            showAlertDialog();
+        }
+    }
+
+    private void showAlertDialog() {
+        //Setup The Alert Builder
+        AlertDialog.Builder builder = new AlertDialog.Builder(UserProfileActivity.this);
+
+    }
+
     private void showUserProfile(FirebaseUser firebaseUser){
         String userID = firebaseUser.getUid();
 

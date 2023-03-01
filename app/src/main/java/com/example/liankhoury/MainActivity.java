@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity {
     //ATTRIBUTES
     private EditText editTextEmailAddress, editTextPassword;
@@ -148,6 +150,16 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Incorrect credentials!", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    public void showAlertDialog(FirebaseUser firebaseUser){
+        // Setup The Alert Dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Email Not Verified");
+        builder.setMessage("Please verify your email verification");
+
+        // Open Email Apps if User clicks/taps Continue button
+
     }
 
 
