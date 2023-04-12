@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         String text = paragraph1TextView + emoji;
 
+        paragraph1TextView.setText(text);
 
         buttonGOLogin = findViewById(R.id.buttonGOLogin);
         buttonRegister = findViewById(R.id.buttonRegister);
