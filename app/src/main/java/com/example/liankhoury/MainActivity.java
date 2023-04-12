@@ -1,9 +1,5 @@
 package com.example.liankhoury;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,11 +9,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.firebase.auth.FirebaseUser;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     //ATTRIBUTES
@@ -39,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         String emoji = getEmoji(unicode);
 
-        String text = "Hi and welcome to BookLi where you can spend your time viewing and reviewing your favorite books"+emoji;
+        String text = paragraph1TextView+emoji;
 
 
         buttonGOLogin = findViewById(R.id.buttonGOLogin);
