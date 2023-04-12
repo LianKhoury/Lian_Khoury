@@ -1,5 +1,4 @@
 package com.example.liankhoury;
-
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,8 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     //ATTRIBUTES
-    private TextView textView , paragraph1TextView;
-    private Button buttonGOLogin , buttonRegister;
+    private TextView textView, paragraph1TextView;
+    private Button buttonGOLogin, buttonRegister;
     private final String valid_mail = "admin";
     private final String valid_password = "1";
     //private final String valid_username = "admin";
@@ -31,11 +30,11 @@ public class MainActivity extends AppCompatActivity {
 
         TextView paragraph1TextView = findViewById(R.id.paragraph1TextView);
 
-        int unicode =  0x1F60A;
+        int unicode = 0x1F60A;
 
         String emoji = getEmoji(unicode);
 
-        String text = paragraph1TextView+emoji;
+        String text = paragraph1TextView + emoji;
 
 
         buttonGOLogin = findViewById(R.id.buttonGOLogin);
@@ -54,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_example, menu);
         return true;
     }
+
+    public String getEmoji(int unicode){
+        return new String(Character.toChars(unicode));
+    }
+
 
     //handle options menu click events
     @SuppressLint("NonConstantResourceId")
@@ -129,26 +133,21 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    public void setButtonGoLogin(View view) {
-        Intent i_goLogin = new Intent(this,LoginActivity.class);
+    public void buttonGoLogin(View view) {
+        Intent i_goLogin = new Intent(this, LoginActivity.class);
         startActivity(i_goLogin);
     }
 
 
-
     public void register(View view) {
-       // String registeredMail = editTextEmailAddress.getText().toString();
-       // String registeredPassword= editTextPassword.getText().toString();
-       //save the email value in the preferences and commits the file
-       // preferences.edit().putString("email",registeredMail).commit();
-       // preferences.edit().putString("password",registeredPassword).commit();
-        Intent i_register = new Intent(this,RegisterActivity.class);
+        // String registeredMail = editTextEmailAddress.getText().toString();
+        // String registeredPassword= editTextPassword.getText().toString();
+        //save the email value in the preferences and commits the file
+        // preferences.edit().putString("email",registeredMail).commit();
+        // preferences.edit().putString("password",registeredPassword).commit();
+        Intent i_register = new Intent(this, RegisterActivity.class);
         startActivity(i_register);
         Toast.makeText(this, "WELCOME!", Toast.LENGTH_LONG).show();
 
     }
-    public String getEmoji(int uni){
-        return new String(Character.toChars(uni));
-    }
-
 }
