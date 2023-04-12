@@ -14,14 +14,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     //ATTRIBUTES
-    private EditText editTextEmailAddress, editTextPassword;
-    private Button buttonLogin, buttonRegister;
+    private TextView textView , paragraph1TextView;
+    private Button buttonGOLogin , buttonRegister;
     private final String valid_mail = "admin";
     private final String valid_password = "1";
     //private final String valid_username = "admin";
@@ -32,11 +33,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editTextEmailAddress = findViewById(R.id.editTextEmailAddress);
-        //editTextPersonName = findViewById(R.id.editTextPersonName);
-        editTextPassword = findViewById(R.id.editTextPassword);
+        TextView paragraph1TextView = findViewById(R.id.paragraph1TextView);
 
-        buttonLogin = findViewById(R.id.buttonLogin);
+        int unicode =  0x1F60A;
+
+        String emoji = getEmoji(unicode);
+
+        String text = "Hi and welcome to BookLi where you can spend your time viewing and reviewing your favorite books"+emoji;
+
+
+        buttonGOLogin = findViewById(R.id.buttonGOLogin);
         buttonRegister = findViewById(R.id.buttonRegister);
         // creates a preferences
         preferences = getSharedPreferences("Userinfo", 0);
@@ -127,39 +133,9 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    public void login(View view) {
-        if (editTextEmailAddress.getText().toString().equals(""))
-            Toast.makeText(this, "Empty Email", Toast.LENGTH_LONG).show();
-        else if (editTextPassword.getText().toString().equals(""))
-            Toast.makeText(this, "Empty Password", Toast.LENGTH_LONG).show();
-        //else if (editTextPersonName.getText().toString().equals(""))
-        //    Toast.makeText(this, "Empty UserName", Toast.LENGTH_LONG).show();
-        else {
-            //this line gets the registered email and password , in case no user was registered empty string is returned
-            String input_mail = preferences.getString("email","");
-            String input_password = preferences.getString("password","");
-
-            String registeredMail = editTextEmailAddress.getText().toString();
-            String registeredPassword = editTextPassword.getText().toString();
-
-            if (input_mail.equals(registeredMail) && input_password.equals(registeredPassword)) {
-                Intent i_mail = new Intent(this,WelcomeActivity.class);
-                startActivity(i_mail);
-            }
-            else {
-                Toast.makeText(this, "Incorrect credentials!", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-    public void showAlertDialog(FirebaseUser firebaseUser){
-        // Setup The Alert Dialog
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle("Email Not Verified");
-        builder.setMessage("Please verify your email verification");
-
-        // Open Email Apps if User clicks/taps Continue button
-
+    public void setButtonGoLogin(View view) {
+        Intent i_goLogin = new Intent(this,LoginActivity.class);
+        startActivity(i_goLogin);
     }
 
 
@@ -175,6 +151,8 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "WELCOME!", Toast.LENGTH_LONG).show();
 
     }
-
+    public String getEmoji(int uni){
+        return new String(Character.toChars(uni));
+    }
 
 }

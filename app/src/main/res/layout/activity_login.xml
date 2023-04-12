@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:ignore="ExtraText">
+    tools:context=".LoginActivity">
+
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Welcome!"
-        android:fontFamily="serif"
+        android:text="Log in"
         android:textColor="@color/teal_700"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,48 +22,49 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.246" />
 
-
     <Button
-        android:id="@+id/buttonGOLogin"
+        android:id="@+id/buttonLogin"
         android:layout_width="193dp"
         android:layout_height="59dp"
         android:backgroundTint="@android:color/black"
         android:onClick="login"
         android:text="Login"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/buttonRegister"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.918"
-        tools:ignore="OnClick" />
-
-    <Button
-        android:id="@+id/buttonRegister"
-        android:layout_width="193dp"
-        android:layout_height="59dp"
-        android:backgroundTint="@android:color/black"
-        android:onClick="register"
-        android:text="@string/register"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.849" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
+        app:layout_constraintVertical_bias="0.235"
+        tools:ignore="OnClick" />
 
-    <TextView
-        android:id="@+id/paragraph1TextView"
-        android:layout_width="361dp"
-        android:layout_height="99dp"
-        android:layout_marginStart="24dp"
-        android:fontFamily="serif"
-        android:textSize="18dp"
-        android:textAlignment="center"
-        android:text="Hi and welcome to BookLi where you can spend your time viewing and reviewing your favorite books"
+    <EditText
+        android:id="@+id/editTextEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="261dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.923" />
 
-
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="340dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.671" />
 </androidx.constraintlayout.widget.ConstraintLayout>
