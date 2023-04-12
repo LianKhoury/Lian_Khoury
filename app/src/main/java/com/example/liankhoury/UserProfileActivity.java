@@ -50,7 +50,7 @@ public class UserProfileActivity extends AppCompatActivity {
         if (firebaseUser == null){
             Toast.makeText(UserProfileActivity.this, "Something went wrong! User's details are not available at the moment", Toast.LENGTH_LONG).show();
         } else {
-            checkIfEmailVerified(firebaseUser)
+            checkIfEmailVerified(firebaseUser);
             progressBar.setVisibility(View.VISIBLE);
             showUserProfile(firebaseUser);
         }
