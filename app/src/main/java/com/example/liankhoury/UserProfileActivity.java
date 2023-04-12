@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -48,21 +50,35 @@ public class UserProfileActivity extends AppCompatActivity {
         if (firebaseUser == null){
             Toast.makeText(UserProfileActivity.this, "Something went wrong! User's details are not available at the moment", Toast.LENGTH_LONG).show();
         } else {
-            checkIfEmailVertified(firebaseUser)
+            checkIfEmailVerified(firebaseUser)
             progressBar.setVisibility(View.VISIBLE);
             showUserProfile(firebaseUser);
         }
     }
-
-    private void checkIfEmailVerified(FirebaseUser firebaseUser){
-        if(!firebaseUser.isEmailVerified()){
-            showAlertDialog();
-        }
+    //Users coming to UserProfileActivity after successful registration
+    private void checkIfEmailVerified(FirebaseUser firebaseUser) {
+       if (!firebaseUser.isEmailVerified()){
+           showAlertDialog();
+       }
     }
 
+
     private void showAlertDialog() {
-        //Setup The Alert Builder
+        //SetUp the Alert Builder
         AlertDialog.Builder builder = new AlertDialog.Builder(UserProfileActivity.this);
+        builder.setTitle("Email Not Verified");
+        builder.setMessage("P;ease verify your Email now. You can not login without email verification next time.");
+
+        //Open Email App if User clicks/taps Continue button
+        builder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int which) {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_APP_EMAIL);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);         //To email app is new window and not within my app
+                startActivity(intent);
+            }
+        });
 
     }
 

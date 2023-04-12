@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="icon_email" type="id" />
-    <item name="icon_email" type="id" />
+    <item name="icon_phone" type="id" />
+    <item name="icon_profile" type="id" />
     <item name="progressBar" type="id" />
 </resources>
