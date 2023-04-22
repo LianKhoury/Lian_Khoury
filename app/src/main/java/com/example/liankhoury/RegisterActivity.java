@@ -94,6 +94,8 @@ public class RegisterActivity extends AppCompatActivity {
                     // clear the entered password
                     editText_registerPassword.clearComposingText();
                     editText_registerConfirm_Password.clearComposingText();
+                }else{
+                    progressBar.setVisibility(View.VISIBLE);
                     registerUser(textFullName , textEmail , textPhoneNum , textPwd);
                 }
 
