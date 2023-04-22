@@ -67,7 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this,"Please enter your email",Toast.LENGTH_LONG).show();
                     editText_registerEmail.setError("Email Address is required");
                     editText_registerEmail.requestFocus();
-                } else if (!Patterns.EMAIL_ADDRESS.matcher((textEmail).matches())){
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(textEmail).matches()){
                     Toast.makeText(RegisterActivity.this,"Please re-enter your email",Toast.LENGTH_LONG).show();
                     editText_registerEmail.setError("Valid email Address is required");
                     editText_registerEmail.requestFocus();
