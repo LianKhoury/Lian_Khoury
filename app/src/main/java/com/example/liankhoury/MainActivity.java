@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         String emoji = getEmoji(unicode);
 
-        String text = paragraph1TextView + emoji;
+        String text = "Hi and welcome to BookLi where you can spend your time viewing and reviewing your favorite books" + emoji;
 
         paragraph1TextView.setText(text);
 
@@ -134,10 +134,10 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    public void buttonGoLogin(View view) {
+    /*public void buttonGoLogin(View view) {
         Intent i_goLogin = new Intent(this, LoginActivity.class);
         startActivity(i_goLogin);
-    }
+    }*/
 
 
     public void register(View view) {

@@ -1,21 +1,31 @@
 package com.example.liankhoury;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText editTextEmailAddress,editTextPassword;
-    private TextView registrationForm;
-    private Button buttonCancel,buttonRegister;
+    private EditText editText_registerEmail,editText_registerPassword,editText_registerPhoneNum,editText_registerFullName,editText_registerConfirm_Password;
+    private Button buttonCancel;
+    private ProgressBar progressBar;
 
     SharedPreferences preferences;
 
@@ -24,20 +34,101 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        editTextEmailAddress = findViewById(R.id.editTextEmailAddress);
-        editTextPassword = findViewById(R.id.editTextPassword);
+        getSupportActionBar().setTitle("Register");
 
-        registrationForm = findViewById(R.id.registrationForm);
+        Toast.makeText(RegisterActivity.this,"you can register now",Toast.LENGTH_LONG).show();
+
+        editText_registerEmail = findViewById(R.id.editText_registerEmail);
+        editText_registerPassword = findViewById(R.id.editText_registerPassword);
+        editText_registerConfirm_Password = findViewById(R.id.editText_registerConfirm_Password);
+        editText_registerFullName = findViewById(R.id.editText_registerFullName);
+        editText_registerPhoneNum = findViewById(R.id.editText_registerPhoneNum);
+
 
         buttonCancel = findViewById(R.id.buttonCancel);
-        buttonRegister = findViewById(R.id.buttonRegister);
+
+        Button buttonRegister = findViewById(R.id.buttonRegister);
+        buttonRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Obtain the entered data
+                String textFullName = editText_registerFullName.getText().toString();
+                String textEmail = editText_registerEmail.getText().toString();
+                String textPwd = editText_registerPassword.getText().toString();
+                String textConfirmPwd = editText_registerConfirm_Password.getText().toString();
+                String textPhoneNum = editText_registerPhoneNum.getText().toString();
+
+                if (TextUtils.isEmpty(textFullName)){
+                    Toast.makeText(RegisterActivity.this,"Please enter your full name",Toast.LENGTH_LONG).show();
+                    editText_registerFullName.setError("Full Name is required");
+                    editText_registerFullName.requestFocus();
+                } else if (TextUtils.isEmpty(textEmail)){
+                    Toast.makeText(RegisterActivity.this,"Please enter your email",Toast.LENGTH_LONG).show();
+                    editText_registerEmail.setError("Email Address is required");
+                    editText_registerEmail.requestFocus();
+                } else if (!Patterns.EMAIL_ADDRESS.matcher((textEmail).matches())){
+                    Toast.makeText(RegisterActivity.this,"Please re-enter your email",Toast.LENGTH_LONG).show();
+                    editText_registerEmail.setError("Valid email Address is required");
+                    editText_registerEmail.requestFocus();
+                } else if (TextUtils.isEmpty(textPhoneNum)){
+                    Toast.makeText(RegisterActivity.this,"Please enter your phone number",Toast.LENGTH_LONG).show();
+                    editText_registerPhoneNum.setError("Phone Number is required");
+                    editText_registerPhoneNum.requestFocus();
+                }else if (TextUtils.isEmpty(textPwd)){
+                    Toast.makeText(RegisterActivity.this,"Please enter your password",Toast.LENGTH_LONG).show();
+                    editText_registerPassword.setError("Password is required");
+                    editText_registerPassword.requestFocus();
+                }else if (textPwd.length() < 8){
+                    Toast.makeText(RegisterActivity.this,"password should be at least 8 digits",Toast.LENGTH_LONG).show();
+                    editText_registerPassword.setError("password too weak");
+                    editText_registerPassword.requestFocus();
+                }else if (TextUtils.isEmpty(textConfirmPwd)) {
+                    Toast.makeText(RegisterActivity.this, "Please confirm your password", Toast.LENGTH_LONG).show();
+                    editText_registerConfirm_Password.setError("password confirmation is required");
+                    editText_registerConfirm_Password.requestFocus();
+                }else if (!textPwd.equals(textConfirmPwd)) {
+                    Toast.makeText(RegisterActivity.this, "Please make sure you entered the same password", Toast.LENGTH_LONG).show();
+                    editText_registerConfirm_Password.setError("password confirmation is required");
+                    editText_registerConfirm_Password.requestFocus();
+                    // clear the entered password
+                    editText_registerPassword.clearComposingText();
+                    editText_registerConfirm_Password.clearComposingText();
+                    registerUser(textFullName , textEmail , textPhoneNum , textPwd);
+                }
+
+            }
+        });
 
         preferences = getSharedPreferences("Userinfo",0);
     }
+    private void registerUser(String textFullName, String textEmail, String textPhoneNum, String textPwd) {
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        auth.createUserWithEmailAndPassword(textEmail,textPwd).addOnCompleteListener(RegisterActivity.this,
+                new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(RegisterActivity.this,"User registered successfully",Toast.LENGTH_LONG).show();
+                            FirebaseUser firebaseUser = auth.getCurrentUser();
+
+                            // send Verification Email
+                            firebaseUser.sendEmailVerification();
+
+                            /*// open User profile after successful registration
+                            Intent intent = new Intent(RegisterActivity.this,UserProfileActivity.class);
+                            // to prevent user from returning back to Register Activity on pressing back button after registration
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                            finish(); //to close Register Activity*/
+                        }
+                    }
+                });
+    }
 
     public void registerR(View view){
-        String input_mail = editTextEmailAddress.getText().toString();
-        String input_password = editTextPassword.getText().toString();
+        String input_mail = editText_registerEmail.getText().toString();
+        String input_password = editText_registerPassword.getText().toString();
         if(input_mail.length()>0){
             //open preferences file
             SharedPreferences.Editor editor = preferences.edit();
