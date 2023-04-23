@@ -40,7 +40,7 @@
             android:layout_weight="1"
             android:id="@+id/btn_Gallery"
             android:backgroundTint="#2a9df4"
-            android:text="Take a Photo"
+            android:text="Open Gallery"
             android:textColor="@android:color/white"
             android:layout_marginRight="5dp"
             />

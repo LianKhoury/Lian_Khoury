@@ -44,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
         editText_registerFullName = findViewById(R.id.editText_registerFullName);
         editText_registerPhoneNum = findViewById(R.id.editText_registerPhoneNum);
 
+        progressBar = findViewById(R.id.progressBar);
 
         buttonCancel = findViewById(R.id.buttonCancel);
 
@@ -96,7 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
                     editText_registerConfirm_Password.clearComposingText();
                 }else{
                     progressBar.setVisibility(View.VISIBLE);
-                    registerUser(textFullName , textEmail , textPhoneNum , textPwd);
+                    registerUser();
                 }
 
             }
@@ -104,7 +105,13 @@ public class RegisterActivity extends AppCompatActivity {
 
         preferences = getSharedPreferences("Userinfo",0);
     }
-    private void registerUser(String textFullName, String textEmail, String textPhoneNum, String textPwd) {
+
+    public void registerUser() {
+        String textFullName = editText_registerFullName.getText().toString();
+        String textEmail = editText_registerEmail.getText().toString();
+        String textPwd = editText_registerPassword.getText().toString();
+        String textConfirmPwd = editText_registerConfirm_Password.getText().toString();
+        String textPhoneNum = editText_registerPhoneNum.getText().toString();
         FirebaseAuth auth = FirebaseAuth.getInstance();
         auth.createUserWithEmailAndPassword(textEmail,textPwd).addOnCompleteListener(RegisterActivity.this,
                 new OnCompleteListener<AuthResult>() {
@@ -117,12 +124,12 @@ public class RegisterActivity extends AppCompatActivity {
                             // send Verification Email
                             firebaseUser.sendEmailVerification();
 
-                            /*// open User profile after successful registration
+                            // open User profile after successful registration
                             Intent intent = new Intent(RegisterActivity.this,UserProfileActivity.class);
                             // to prevent user from returning back to Register Activity on pressing back button after registration
-                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                            //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
-                            finish(); //to close Register Activity*/
+                            finish(); //to close Register Activity
                         }
                     }
                 });
