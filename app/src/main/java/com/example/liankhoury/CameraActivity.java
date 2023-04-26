@@ -1,9 +1,5 @@
 package com.example.liankhoury;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -35,13 +31,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.StreamCorruptedException;
-import java.lang.reflect.Array;
 import java.nio.ByteBuffer;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -74,7 +72,7 @@ public class CameraActivity extends AppCompatActivity {
     private Handler mBackgroundHandler;
     private HandlerThread mBackgroundThread;
     protected CameraDevice cameraDevice;
-    protected CameraCaptureSession cameraCaptureSession;
+    protected CameraCaptureSession cameraCaptureSessions;
     protected CaptureRequest.Builder captureRequestBuilder;
 
 
@@ -369,7 +367,7 @@ public class CameraActivity extends AppCompatActivity {
     }
 
     @Override
-    public void setRequestCameraPermissionResult(int requestCode,@NonNull String[] permission,@NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode,@NonNull String[] permission,@NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permission, grantResults);
         if (requestCode == REQUEST_CAMERA_PERMISSION) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
