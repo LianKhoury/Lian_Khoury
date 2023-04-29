@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText editText_registerEmail,editText_registerPassword,editText_registerPhoneNum,editText_registerFullName,editText_registerConfirm_Password;
+    private EditText editText_registerEmail, editText_registerPassword, editText_registerPhoneNum, editText_registerFullName, editText_registerConfirm_Password;
     private Button buttonCancel;
     private ProgressBar progressBar;
 
@@ -34,9 +34,9 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        getSupportActionBar().setTitle("Register");
+        //getSupportActionBar().setTitle("Register");
 
-        Toast.makeText(RegisterActivity.this,"you can register now",Toast.LENGTH_LONG).show();
+        Toast.makeText(RegisterActivity.this, "you can register now", Toast.LENGTH_LONG).show();
 
         editText_registerEmail = findViewById(R.id.editText_registerEmail);
         editText_registerPassword = findViewById(R.id.editText_registerPassword);
@@ -60,82 +60,84 @@ public class RegisterActivity extends AppCompatActivity {
                 String textConfirmPwd = editText_registerConfirm_Password.getText().toString();
                 String textPhoneNum = editText_registerPhoneNum.getText().toString();
 
-                if (TextUtils.isEmpty(textFullName)){
-                    Toast.makeText(RegisterActivity.this,"Please enter your full name",Toast.LENGTH_LONG).show();
+                if (TextUtils.isEmpty(textFullName)) {
+                    Toast.makeText(RegisterActivity.this, "Please enter your full name", Toast.LENGTH_LONG).show();
                     editText_registerFullName.setError("Full Name is required");
                     editText_registerFullName.requestFocus();
-                } else if (TextUtils.isEmpty(textEmail)){
-                    Toast.makeText(RegisterActivity.this,"Please enter your email",Toast.LENGTH_LONG).show();
+                } else if (TextUtils.isEmpty(textEmail)) {
+                    Toast.makeText(RegisterActivity.this, "Please enter your email", Toast.LENGTH_LONG).show();
                     editText_registerEmail.setError("Email Address is required");
                     editText_registerEmail.requestFocus();
-                } else if (!Patterns.EMAIL_ADDRESS.matcher(textEmail).matches()){
-                    Toast.makeText(RegisterActivity.this,"Please re-enter your email",Toast.LENGTH_LONG).show();
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(textEmail).matches()) {
+                    Toast.makeText(RegisterActivity.this, "Please re-enter your email", Toast.LENGTH_LONG).show();
                     editText_registerEmail.setError("Valid email Address is required");
                     editText_registerEmail.requestFocus();
-                } else if (TextUtils.isEmpty(textPhoneNum)){
-                    Toast.makeText(RegisterActivity.this,"Please enter your phone number",Toast.LENGTH_LONG).show();
+                } else if (TextUtils.isEmpty(textPhoneNum)) {
+                    Toast.makeText(RegisterActivity.this, "Please enter your phone number", Toast.LENGTH_LONG).show();
                     editText_registerPhoneNum.setError("Phone Number is required");
                     editText_registerPhoneNum.requestFocus();
-                }else if (TextUtils.isEmpty(textPwd)){
-                    Toast.makeText(RegisterActivity.this,"Please enter your password",Toast.LENGTH_LONG).show();
+                } else if (textPhoneNum.length() != 10) {
+                    Toast.makeText(RegisterActivity.this, "Please re-enter your phone number", Toast.LENGTH_LONG).show();
+                    editText_registerPhoneNum.setError("Phone Number should be 10 digits");
+                    editText_registerPhoneNum.requestFocus();
+                } else if (TextUtils.isEmpty(textPwd)) {
+                    Toast.makeText(RegisterActivity.this, "Please enter your password", Toast.LENGTH_LONG).show();
                     editText_registerPassword.setError("Password is required");
                     editText_registerPassword.requestFocus();
-                }else if (textPwd.length() < 8){
-                    Toast.makeText(RegisterActivity.this,"password should be at least 8 digits",Toast.LENGTH_LONG).show();
+                } else if (textPwd.length() < 8) {
+                    Toast.makeText(RegisterActivity.this, "password should be at least 8 digits", Toast.LENGTH_LONG).show();
                     editText_registerPassword.setError("password too weak");
                     editText_registerPassword.requestFocus();
-                }else if (TextUtils.isEmpty(textConfirmPwd)) {
+                } else if (TextUtils.isEmpty(textConfirmPwd)) {
                     Toast.makeText(RegisterActivity.this, "Please confirm your password", Toast.LENGTH_LONG).show();
                     editText_registerConfirm_Password.setError("password confirmation is required");
                     editText_registerConfirm_Password.requestFocus();
-                }else if (!textPwd.equals(textConfirmPwd)) {
+                } else if (!textPwd.equals(textConfirmPwd)) {
                     Toast.makeText(RegisterActivity.this, "Please make sure you entered the same password", Toast.LENGTH_LONG).show();
                     editText_registerConfirm_Password.setError("password confirmation is required");
                     editText_registerConfirm_Password.requestFocus();
                     // clear the entered password
                     editText_registerPassword.clearComposingText();
                     editText_registerConfirm_Password.clearComposingText();
-                }else{
+                } else {
                     progressBar.setVisibility(View.VISIBLE);
-                    registerUser();
+                    registerUser(textFullName, textEmail, textPhoneNum, textPwd);
                 }
 
             }
         });
 
-        preferences = getSharedPreferences("Userinfo",0);
+        preferences = getSharedPreferences("Userinfo", 0);
     }
 
-    public void registerUser() {
-        String textFullName = editText_registerFullName.getText().toString();
-        String textEmail = editText_registerEmail.getText().toString();
-        String textPwd = editText_registerPassword.getText().toString();
-        String textConfirmPwd = editText_registerConfirm_Password.getText().toString();
-        String textPhoneNum = editText_registerPhoneNum.getText().toString();
+    public void registerUser(String textFullName, String textEmail, String textPhoneNum, String textPwd) {
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        auth.createUserWithEmailAndPassword(textEmail,textPwd).addOnCompleteListener(RegisterActivity.this,
+        auth.createUserWithEmailAndPassword(textEmail, textPwd).addOnCompleteListener(RegisterActivity.this,
                 new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(RegisterActivity.this,"User registered successfully",Toast.LENGTH_LONG).show();
+                        if (task.isSuccessful()) {
+                            Toast.makeText(RegisterActivity.this, "User registered successfully", Toast.LENGTH_LONG).show();
                             FirebaseUser firebaseUser = auth.getCurrentUser();
 
                             // send Verification Email
                             firebaseUser.sendEmailVerification();
 
-                            // open User profile after successful registration
+                            /*// open User profile after successful registration
                             Intent intent = new Intent(RegisterActivity.this,UserProfileActivity.class);
                             // to prevent user from returning back to Register Activity on pressing back button after registration
-                            //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
-                            finish(); //to close Register Activity
+                            finish(); //to close Register Activity*/
                         }
                     }
                 });
     }
+}
 
-    public void registerR(View view){
+
+
+    /*public void registerR(View view){
         String input_mail = editText_registerEmail.getText().toString();
         String input_password = editText_registerPassword.getText().toString();
         if(input_mail.length()>0){
@@ -153,14 +155,14 @@ public class RegisterActivity extends AppCompatActivity {
         else{
             Toast.makeText(this, "Empty values, please insert!", Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 
-    public void cancel(View view) {
+   /* public void cancel(View view) {
         Intent intent_main = new Intent(this,MainActivity.class);
         startActivity(intent_main);
-    }
-}
-//public void register(View view) {
+    }*/
+//}
+/*//public void register(View view) {
 //        String registeredMail = editTextEmailAddress.getText().toString();
 //        String registeredPassword= editTextPassword.getText().toString();
 //        //save the email value in the preferences and commits the file
@@ -168,4 +170,4 @@ public class RegisterActivity extends AppCompatActivity {
 //        preferences.edit().putString("password",registeredPassword).commit();
 //        Intent i_register = new Intent(this,RegisterActivity.class);
 //        startActivity(i_register);
-//    }
+//    }*/
