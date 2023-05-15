@@ -25,7 +25,7 @@ import java.util.concurrent.locks.ReadWriteLock;
 
 public class UserProfileActivity extends AppCompatActivity {
 
-    private TextView TextViewProfile,T_VShowFullName,T_VShowEmail,T_VShowPhoneNum, TextView_Welcome;
+    private TextView TextViewProfile,T_VShowFullName,T_VShowEmail,T_VShowPhoneNum,TextView_Welcome;
     private ProgressBar progressBar;
     private String FullName,email,phone;
     private ImageView imageView;
@@ -39,10 +39,11 @@ public class UserProfileActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Home");
 
         TextViewProfile = findViewById(R.id.TextViewProfile);
+        TextView_Welcome  = findViewById(R.id.TextView_Welcome);
         T_VShowFullName = findViewById(R.id.T_VShowFullName);
         T_VShowEmail = findViewById(R.id.T_VShowEmail);
         T_VShowPhoneNum = findViewById(R.id.T_VShowPhoneNum);
-        progressBar = findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.ProgressBar);
 
         authProfile = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = authProfile.getCurrentUser();
@@ -61,7 +62,6 @@ public class UserProfileActivity extends AppCompatActivity {
            showAlertDialog();
        }
     }
-
 
     private void showAlertDialog() {
         //SetUp the Alert Builder
@@ -96,6 +96,7 @@ public class UserProfileActivity extends AppCompatActivity {
                     FullName = firebaseUser.getDisplayName();
                     email = firebaseUser.getEmail();
                     phone = readUserDetails.phone;
+
                     TextView_Welcome.setText("Welcome," + FullName + "!");
                     T_VShowFullName.setText(FullName);
                     T_VShowEmail.setText(email);

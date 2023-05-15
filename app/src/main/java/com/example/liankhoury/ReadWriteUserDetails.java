@@ -1,11 +1,10 @@
 package com.example.liankhoury;
 
 public class ReadWriteUserDetails {
-    public String phone;
+    public String textFullName , phone;
 
-    public ReadWriteUserDetails(){};
-
-    public ReadWriteUserDetails(String textPhone){
-        this.phone = textPhone;
+    public ReadWriteUserDetails(String textFullName, String textPhoneNum) {
+        this.textFullName = textFullName;
+        this.phone = textPhoneNum;
     }
 }
