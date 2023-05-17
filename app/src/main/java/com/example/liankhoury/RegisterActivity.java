@@ -118,6 +118,8 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void registerUser(String textFullName, String textEmail, String textPhoneNum, String textPwd) {
         FirebaseAuth auth = FirebaseAuth.getInstance();
+
+        // Create user Profile
         auth.createUserWithEmailAndPassword(textEmail, textPwd).addOnCompleteListener(RegisterActivity.this,
                 new OnCompleteListener<AuthResult>() {
                     @Override
@@ -142,28 +144,16 @@ public class RegisterActivity extends AppCompatActivity {
 
                                         Toast.makeText(RegisterActivity.this,"User registered successfully. Please verify your email",Toast.LENGTH_LONG).show();
 
-                                        // open User profile after successful registration
+                                        /*// open User profile after successful registration
                                         Intent intent = new Intent(RegisterActivity.this,UserProfileActivity.class);
                                         // to prevent user from returning back to Register Activity on pressing back button after registration
                                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         startActivity(intent);
-                                        finish(); //to close Register Activity
+                                        finish(); //to close Register Activity*/
                                     } else {
-
+                                        Toast.makeText(RegisterActivity.this,"User registered successfully. please verify your email",Toast.LENGTH_LONG).show();
+                                        progressBar.setVisibility(View.GONE);
                                     }
-
-
-                                    // send Verification Email
-                                    firebaseUser.sendEmailVerification();
-
-                                    Toast.makeText(RegisterActivity.this,"User registered successfully. Please verify your email",Toast.LENGTH_LONG).show();
-
-                                    // open User profile after successful registration
-                                    Intent intent = new Intent(RegisterActivity.this,UserProfileActivity.class);
-                                    // to prevent user from returning back to Register Activity on pressing back button after registration
-                                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                    startActivity(intent);
-                                    finish(); //to close Register Activity
                                 }
                             });
 
