@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         TextView paragraph1TextView = findViewById(R.id.paragraph1TextView);
 
         int unicode = 0x1F60A;
@@ -43,6 +44,15 @@ public class MainActivity extends AppCompatActivity {
         // creates a preferences
         preferences = getSharedPreferences("Userinfo", 0);
 
+        // open login Activity
+        buttonGOLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        }) {
+
+        }
     }//onCreate
 
     //load option menu from an activity - linking the xml option menu to the activity

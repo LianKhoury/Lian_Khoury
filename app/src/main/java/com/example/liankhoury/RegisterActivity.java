@@ -23,8 +23,12 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -54,6 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         buttonCancel = findViewById(R.id.buttonCancel);
 
+
         Button buttonRegister = findViewById(R.id.buttonRegister);
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +70,14 @@ public class RegisterActivity extends AppCompatActivity {
                 String textPwd = editText_registerPassword.getText().toString();
                 String textConfirmPwd = editText_registerConfirm_Password.getText().toString();
                 String textPhoneNum = editText_registerPhoneNum.getText().toString();
+
+
+                // Validate Mobile Number using matcher and Pattern (Regular Expression)
+                String mobileRegex = "[0][5][0-9]{7}";
+                Matcher mobileMatcher;
+                Pattern mobilePattern = Pattern.compile(mobileRegex);
+                mobileMatcher = mobilePattern.matcher(textPhoneNum);
+
 
                 if (TextUtils.isEmpty(textFullName)) {
                     Toast.makeText(RegisterActivity.this, "Please enter your full name", Toast.LENGTH_LONG).show();
@@ -86,7 +99,14 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "Please re-enter your phone number", Toast.LENGTH_LONG).show();
                     editText_registerPhoneNum.setError("Phone Number should be 10 digits");
                     editText_registerPhoneNum.requestFocus();
-                } else if (TextUtils.isEmpty(textPwd)) {
+                } else if (!mobileMatcher.find()) {
+                    Toast.makeText(RegisterActivity.this, "Please re-enter your phone number", Toast.LENGTH_LONG).show();
+                    editText_registerPhoneNum.setError("Phone Number is not valid");
+                    editText_registerPhoneNum.requestFocus();
+                }
+
+
+                else if (TextUtils.isEmpty(textPwd)) {
                     Toast.makeText(RegisterActivity.this, "Please enter your password", Toast.LENGTH_LONG).show();
                     editText_registerPassword.setError("Password is required");
                     editText_registerPassword.requestFocus();
@@ -128,8 +148,12 @@ public class RegisterActivity extends AppCompatActivity {
                             Toast.makeText(RegisterActivity.this, "User registered successfully", Toast.LENGTH_LONG).show();
                             FirebaseUser firebaseUser = auth.getCurrentUser();
 
+                            // Update Display Name of User
+                            UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder().setDisplayName(textFullName).build();
+                            firebaseUser.updateProfile(profileChangeRequest);
+
                             // Enter User data into the Firebase Realtime Database
-                            ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(textFullName,textPhoneNum);
+                            ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(textPhoneNum);
 
                             //Extracting User Data into the firebase Realtime Database.
                             DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Registered User");
@@ -152,8 +176,9 @@ public class RegisterActivity extends AppCompatActivity {
                                         finish(); //to close Register Activity*/
                                     } else {
                                         Toast.makeText(RegisterActivity.this,"User registered successfully. please verify your email",Toast.LENGTH_LONG).show();
-                                        progressBar.setVisibility(View.GONE);
                                     }
+                                    // Hide ProgressBar whether User creation is successful or failed
+                                    progressBar.setVisibility(View.GONE);
                                 }
                             });
 
@@ -173,6 +198,8 @@ public class RegisterActivity extends AppCompatActivity {
                                 Log.e(TAG, e.getMessage());
                                 Toast.makeText(RegisterActivity.this, e.getMessage() , Toast.LENGTH_LONG).show();
                             }
+                            // Hide ProgressBar whether User creation is successful or failed
+                            progressBar.setVisibility(View.GONE);
                         }
 
 
