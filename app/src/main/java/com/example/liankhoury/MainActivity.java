@@ -48,11 +48,10 @@ public class MainActivity extends AppCompatActivity {
         buttonGOLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(intent);
             }
-        }) {
-
-        }
+        });
     }//onCreate
 
     //load option menu from an activity - linking the xml option menu to the activity

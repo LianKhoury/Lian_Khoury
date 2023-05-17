@@ -192,7 +192,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 editText_registerPassword.setError(" your email is invalid or already in use. kindly re-enter.");
                                 editText_registerPassword.requestFocus();
                             } catch (FirebaseAuthUserCollisionException e){
-                                editText_registerPassword.setError(" user is already registered with this email. Use another email ");
+                                editText_registerPassword.setError(" user is already registered with this password. Use another email ");
                                 editText_registerPassword.requestFocus();
                             } catch (Exception e){
                                 Log.e(TAG, e.getMessage());
