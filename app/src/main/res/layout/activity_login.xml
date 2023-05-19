@@ -59,12 +59,19 @@
             android:text="Password*"
             android:textColor="#555555"
             android:textSize="16sp" />
+        
+        <ImageView
+            android:id="@+id/ImageView_show_hide_password"
+            android:layout_width="30dp"
+            android:layout_height="32dp"
+            android:layout_below="@id/textView_login_password" />
 
         <EditText
             android:id="@+id/editText_login_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView_login_password"
+            android:layout_marginStart="30dp"
             android:background="@drawable/border"
             android:hint="Enter Password"
             android:inputType="textPassword"

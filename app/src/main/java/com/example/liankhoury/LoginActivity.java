@@ -5,10 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -24,7 +28,9 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editTextEmailAddress, editTextPassword;
     private ProgressBar progressBar;
     private FirebaseAuth authProfile;
+    private ImageView imageView_show_hide_password;
     private Button buttonLogin;
+    private static final String TAG = "LoginActivity";
 
 
     @Override
@@ -39,6 +45,25 @@ public class LoginActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
 
         authProfile = FirebaseAuth.getInstance();
+
+        // Show Hide password using Eye Icon
+        ImageView imageViewShowHidePassword = findViewById(R.id.ImageView_show_hide_password);
+        imageViewShowHidePassword.setImageResource(R.drawable.icon_pwdhide);
+        imageViewShowHidePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (editTextPassword.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    // if password is visible then hide it
+                    editTextPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    // change icon
+                    imageViewShowHidePassword.setImageResource(R.drawable.icon_pwdhide);
+                } else {
+                    editTextPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    imageViewShowHidePassword.setImageResource(R.drawable.icon_pwdshow);
+                }
+            }
+        });
+
 
         //login User
         Button buttonLogin = findViewById(R.id.buttonLogin);
@@ -82,8 +107,12 @@ public class LoginActivity extends AppCompatActivity {
                     } catch (FirebaseAuthInvalidUserException e) {
                         editTextEmailAddress.setError("User does not exists or is no longer valid . Please register again.");
                         editTextEmailAddress.requestFocus();
-                    } catch (FirebaseAuthInvalidCredentialsException) {
-
+                    } catch (FirebaseAuthInvalidCredentialsException e) {
+                        editTextEmailAddress.setError("Invalid credentials. kindly, check and re-enter");
+                        editTextEmailAddress.requestFocus();
+                    } catch (Exception e) {
+                        Log.e(TAG, e.getMessage());
+                        Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                         Toast.makeText(LoginActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
                 }
