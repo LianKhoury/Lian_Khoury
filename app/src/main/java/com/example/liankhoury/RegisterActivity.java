@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
@@ -185,14 +186,14 @@ public class RegisterActivity extends AppCompatActivity {
                         } else {
                             try{
                                 throw task.getException();
-                            } catch (FirebaseAuthInvalidUserException e){
+                            } catch (FirebaseAuthWeakPasswordException e){
                                 editText_registerPassword.setError(" your password is too weak. kindly use a mix of alphabets, numbers and special characters");
                                 editText_registerPassword.requestFocus();
                             } catch (FirebaseAuthInvalidCredentialsException e){
                                 editText_registerPassword.setError(" your email is invalid or already in use. kindly re-enter.");
                                 editText_registerPassword.requestFocus();
                             } catch (FirebaseAuthUserCollisionException e){
-                                editText_registerPassword.setError(" user is already registered with this password. Use another email ");
+                                editText_registerPassword.setError(" user is already registered with this password. Use another password ");
                                 editText_registerPassword.requestFocus();
                             } catch (Exception e){
                                 Log.e(TAG, e.getMessage());
