@@ -154,7 +154,7 @@ public class RegisterActivity extends AppCompatActivity {
                             firebaseUser.updateProfile(profileChangeRequest);
 
                             // Enter User data into the Firebase Realtime Database
-                            ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(textPhoneNum);
+                            ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(textFullName,textPhoneNum);
 
                             //Extracting User Data into the firebase Realtime Database.
                             DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Registered User");
@@ -190,7 +190,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 editText_registerPassword.setError(" your password is too weak. kindly use a mix of alphabets, numbers and special characters");
                                 editText_registerPassword.requestFocus();
                             } catch (FirebaseAuthInvalidCredentialsException e){
-                                editText_registerPassword.setError(" your email is invalid or already in use. kindly re-enter.");
+                                editText_registerPassword.setError(" your password is invalid or already in use. kindly re-enter.");
                                 editText_registerPassword.requestFocus();
                             } catch (FirebaseAuthUserCollisionException e){
                                 editText_registerPassword.setError(" user is already registered with this password. Use another password ");
