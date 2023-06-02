@@ -91,6 +91,18 @@
             android:text="Login"
             android:textColor="@color/white"
             tools:ignore="OnClick" />
+
+        <Button
+            android:id="@+id/button_forgot_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buttonLogin"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:backgroundTint="@android:color/black"
+            android:text="Forgot Password?"
+            android:textColor="@color/white"
+            tools:ignore="OnClick" />
         
         <ProgressBar
             android:id="@+id/progressBar"
