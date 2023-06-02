@@ -172,11 +172,12 @@ public class RegisterActivity extends AppCompatActivity {
                                         /*// open User profile after successful registration
                                         Intent intent = new Intent(RegisterActivity.this,UserProfileActivity.class);
                                         // to prevent user from returning back to Register Activity on pressing back button after registration
-                                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                                        | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         startActivity(intent);
                                         finish(); //to close Register Activity*/
                                     } else {
-                                        Toast.makeText(RegisterActivity.this,"User registered successfully. please verify your email",Toast.LENGTH_LONG).show();
+                                        Toast.makeText(RegisterActivity.this,"User registered failed. please try again",Toast.LENGTH_LONG).show();
                                     }
                                     // Hide ProgressBar whether User creation is successful or failed
                                     progressBar.setVisibility(View.GONE);

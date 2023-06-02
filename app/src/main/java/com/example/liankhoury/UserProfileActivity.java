@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -114,4 +116,51 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
     }
+
+    // Creating ActionBar Menu
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate menu items
+        getMenuInflater().inflate(R.menu.common_menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    // When any menu item is selected
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.menu_refresh){
+            //Refresh activity
+            startActivity(getIntent());
+            finish();
+            overridePendingTransition(0,0);
+        } /*else if (id == R.id.menu_update_profile){
+            Intent intent = new Intent(UserProfileActivity.this,UpdateProfileActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.menu_update_Email){
+            Intent intent = new Intent(UserProfileActivity.this,UpdateEmailActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.menu_settings){
+            Toast.makeText(UserProfileActivity.this,"menu settings",Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.menu_change_pwd){
+            Intent intent = new Intent(UserProfileActivity.this,ChangePasswordActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.menu_delete_profile){
+            Intent intent = new Intent(UserProfileActivity.this,DeleteProfileActivity.class);
+            startActivity(intent);
+        } */else if (id == R.id.menu_logout) {
+            authProfile.signOut();
+            Toast.makeText(UserProfileActivity.this,"Logged Out", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(UserProfileActivity.this,MainActivity.class);
+
+            // Clear stack to prevent user coming back to UserProfileActivity on pressing back button after logging out
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK );
+            startActivity(intent);
+            finish();       // close UserProfileActivity
+        } else {
+            Toast.makeText(UserProfileActivity.this,"Something went wrong!", Toast.LENGTH_LONG).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
