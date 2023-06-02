@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         authProfile = FirebaseAuth.getInstance();
 
         // Reset Password
-        Button buttonForgotPwd = findViewById(R.id.button_forgo_pwd);
+        Button buttonForgotPwd = findViewById(R.id.button_forgot_pwd);
         buttonForgotPwd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
