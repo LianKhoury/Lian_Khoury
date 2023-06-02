@@ -47,6 +47,17 @@ public class UserProfileActivity extends AppCompatActivity {
         T_VShowPhoneNum = findViewById(R.id.T_VShowPhoneNum);
         progressBar = findViewById(R.id.ProgressBar);
 
+        // Set OnClickListener on ImageView to open UploadProfilePicActivity
+        imageView = findViewById(R.id.imageView_profile_dp);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserProfileActivity.this,UploadProfilePicActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
         authProfile = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = authProfile.getCurrentUser();
 
