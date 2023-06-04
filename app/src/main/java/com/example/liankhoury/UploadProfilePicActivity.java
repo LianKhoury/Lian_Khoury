@@ -3,6 +3,7 @@ package com.example.liankhoury;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -44,6 +45,7 @@ public class UploadProfilePicActivity extends AppCompatActivity {
         setContentView(R.layout.activity_upload_profile_pic);
 
         getSupportActionBar().setTitle("Upload Profile Picture");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Button buttonUploadPicChoose = findViewById(R.id.upload_pic_choose_button);
         Button buttonUploadPic = findViewById(R.id.upload_pic_button);
@@ -157,7 +159,9 @@ public class UploadProfilePicActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.menu_refresh){
+        if( id == android.R.id.home){
+            NavUtils.navigateUpFromSameTask(UploadProfilePicActivity.this);
+        }else if (id == R.id.menu_refresh){
             //Refresh activity
             startActivity(getIntent());
             finish();

@@ -3,6 +3,7 @@ package com.example.liankhoury;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.DialogInterface;
@@ -44,6 +45,7 @@ public class UserProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_profile);
 
         getSupportActionBar().setTitle("My Account");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         swipeToRefresh();   
 
@@ -179,7 +181,10 @@ public class UserProfileActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.menu_refresh){
+        if( id == android.R.id.home){
+            NavUtils.navigateUpFromSameTask(UserProfileActivity.this);
+        }
+        else if (id == R.id.menu_refresh){
             //Refresh activity
             startActivity(getIntent());
             finish();

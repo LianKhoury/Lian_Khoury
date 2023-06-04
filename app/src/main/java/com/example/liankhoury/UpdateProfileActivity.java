@@ -2,6 +2,7 @@ package com.example.liankhoury;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -42,6 +43,8 @@ public class UpdateProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_update_profile);
 
         getSupportActionBar().setTitle("Update Profile Details");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         progressBar = findViewById(R.id.progressBar);
         editTextUpdateName = findViewById(R.id.editText_update_profile_name);
@@ -201,7 +204,9 @@ public class UpdateProfileActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.menu_refresh){
+        if( id == android.R.id.home){
+            NavUtils.navigateUpFromSameTask(UpdateProfileActivity.this);
+        } else if (id == R.id.menu_refresh){
             //Refresh activity
             startActivity(getIntent());
             finish();
