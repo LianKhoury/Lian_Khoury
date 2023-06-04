@@ -81,7 +81,15 @@ import android.content.Intent;
 import android.content.Context;
 import android.os.Build;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.NotificationManagerCompat;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class MyIntentService extends IntentService {
@@ -89,6 +97,9 @@ public class MyIntentService extends IntentService {
     private static final String CHANNEL_ID = "CHANNEL_3";
     private static final int REQUEST_CODE = 1;
     private static final int NOTIFICATION_ID = 1;
+    private FirebaseAuth authProfile;
+    private String FullName;
+
 
     public MyIntentService() {
         super("MyIntentService");
@@ -97,8 +108,16 @@ public class MyIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
+        authProfile = FirebaseAuth.getInstance();
+        FirebaseUser firebaseUser = authProfile.getCurrentUser();
+        String userID = firebaseUser.getUid();
+
+        //Extracting User Reference from Database for "Registered Users"
+        DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Registered Users");
+        FullName = firebaseUser.getDisplayName();
+
         Notification.Builder nBuilder = new Notification.Builder(this);
-        nBuilder.setContentTitle("Welcome Back!");
+        nBuilder.setContentTitle("Welcome" + " " + FullName + "!");
         nBuilder.setContentText("we have new book offers that you might LOVE");
         nBuilder.setSmallIcon(R.drawable.notification_icon);
 

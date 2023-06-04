@@ -58,11 +58,6 @@ public class MainActivity extends AppCompatActivity {
     /*
         this method loads the menu design into this activity
      */
-    @Override
-    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_example, menu);
-        return true;
-    }
 
     public String getEmoji(int unicode){
         return new String(Character.toChars(unicode));

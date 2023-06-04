@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -64,6 +65,16 @@ public class UserProfileActivity extends AppCompatActivity {
                 Intent intent = new Intent(UserProfileActivity.this,UploadProfilePicActivity.class);
                 startActivity(intent);
 
+            }
+        });
+
+
+        Button buttonGo2Main = findViewById(R.id.button_go_main);
+        buttonGo2Main.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserProfileActivity.this,WelcomeActivity.class);
+                startActivity(intent);
             }
         });
 
