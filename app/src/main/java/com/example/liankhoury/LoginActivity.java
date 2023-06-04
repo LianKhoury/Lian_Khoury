@@ -181,7 +181,8 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(LoginActivity.this,"Already Logged In!", Toast.LENGTH_SHORT).show();
 
             // Start the UserProfileActivity
-            startActivity(new Intent(LoginActivity.this,UserProfileActivity.class));
+            Intent intent = new Intent(LoginActivity.this,UserProfileActivity.class);
+            startActivity(intent);
             finish();    // Close LoginActivity
         } else  {
             Toast.makeText(LoginActivity.this,"you can login now!", Toast.LENGTH_SHORT).show();

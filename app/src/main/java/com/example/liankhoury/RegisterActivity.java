@@ -55,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
         editText_registerFullName = findViewById(R.id.editText_registerFullName);
         editText_registerPhoneNum = findViewById(R.id.editText_registerPhoneNum);
 
-        progressBar = findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.ProgressBar);
 
         buttonCancel = findViewById(R.id.buttonCancel);
 
@@ -104,10 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "Please re-enter your phone number", Toast.LENGTH_LONG).show();
                     editText_registerPhoneNum.setError("Phone Number is not valid");
                     editText_registerPhoneNum.requestFocus();
-                }
-
-
-                else if (TextUtils.isEmpty(textPwd)) {
+                } else if (TextUtils.isEmpty(textPwd)) {
                     Toast.makeText(RegisterActivity.this, "Please enter your password", Toast.LENGTH_LONG).show();
                     editText_registerPassword.setError("Password is required");
                     editText_registerPassword.requestFocus();
@@ -154,7 +151,7 @@ public class RegisterActivity extends AppCompatActivity {
                             firebaseUser.updateProfile(profileChangeRequest);
 
                             // Enter User data into the Firebase Realtime Database
-                            ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(textFullName,textPhoneNum);
+                            ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(textPhoneNum);
 
                             //Extracting User Data into the firebase Realtime Database.
                             DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Registered User");

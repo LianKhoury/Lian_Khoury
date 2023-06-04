@@ -3,8 +3,10 @@ package com.example.liankhoury;
 public class ReadWriteUserDetails {
     public String fullName,phone;
 
-    public ReadWriteUserDetails(String textFullName,String textPhoneNum) {
-        this.fullName = textFullName;
+    //Constructor
+    public ReadWriteUserDetails(){};
+
+    public ReadWriteUserDetails(String textPhoneNum) {
         this.phone = textPhoneNum;
     }
 }

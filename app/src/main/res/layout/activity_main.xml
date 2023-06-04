@@ -29,7 +29,6 @@
         android:layout_width="193dp"
         android:layout_height="59dp"
         android:backgroundTint="@android:color/black"
-        android:onClick="buttonGoLogin"
         android:text="Login"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/buttonRegister"

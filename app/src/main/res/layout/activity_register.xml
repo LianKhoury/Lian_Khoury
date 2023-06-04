@@ -16,6 +16,15 @@
         android:background="@color/white"
         android:padding="15dp">
 
+        <ProgressBar
+            android:id="@+id/ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:elevation="10dp"
+            android:visibility="gone" />
+
         <TextView
             android:id="@+id/textview_registerHead"
             android:layout_width="match_parent"
@@ -182,14 +191,6 @@
             android:text="Cancel"
             android:textColor="@android:color/black" />
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:elevation="10dp"
-            android:visibility="gone" />
 
     </RelativeLayout>
 

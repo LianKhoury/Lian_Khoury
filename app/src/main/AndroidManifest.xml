@@ -17,6 +17,12 @@
         android:theme="@style/Theme.LianKhoury"
         tools:targetApi="31">
         <activity
+            android:name=".DeleteProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".UploadProfilePicActivity"
             android:exported="false" />
         <activity

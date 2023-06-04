@@ -143,11 +143,6 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    public void buttonGoLogin(View view) {
-        Intent i_goLogin = new Intent(this, LoginActivity.class);
-        startActivity(i_goLogin);
-    }
-
 
     public void register(View view) {
         // String registeredMail = editTextEmailAddress.getText().toString();

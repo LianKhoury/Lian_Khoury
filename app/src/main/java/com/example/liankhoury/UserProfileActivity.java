@@ -3,10 +3,13 @@ package com.example.liankhoury;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,33 +25,37 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.concurrent.locks.ReadWriteLock;
 
 public class UserProfileActivity extends AppCompatActivity {
 
-    private TextView TextViewProfile,T_VShowFullName,T_VShowEmail,T_VShowPhoneNum,TextView_Welcome;
+    private TextView TextViewProfile,textViewFullName,textViewEmail,textViewPhoneNum,TextView_Welcome;
     private ProgressBar progressBar;
-    private String FullName,email,phone;
+    private String FullName,email,phoneNum;
     private ImageView imageView;
     private FirebaseAuth authProfile;
+    private SwipeRefreshLayout swipeContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
-        getSupportActionBar().setTitle("Home");
+        getSupportActionBar().setTitle("My Account");
+
+        swipeToRefresh();   
 
         TextViewProfile = findViewById(R.id.TextViewProfile);
         TextView_Welcome  = findViewById(R.id.TextView_Welcome);
-        T_VShowFullName = findViewById(R.id.T_VShowFullName);
-        T_VShowEmail = findViewById(R.id.T_VShowEmail);
-        T_VShowPhoneNum = findViewById(R.id.T_VShowPhoneNum);
-        progressBar = findViewById(R.id.ProgressBar);
+        textViewFullName = findViewById(R.id.T_VShowFullName);
+        textViewEmail = findViewById(R.id.T_VShowEmail);
+        textViewPhoneNum = findViewById(R.id.T_VShowPhoneNum);
+        progressBar = findViewById(R.id.progressBar);
 
         // Set OnClickListener on ImageView to open UploadProfilePicActivity
-        imageView = findViewById(R.id.imageView_profile_dp);
+        imageView = findViewById(R.id.IMG_ViewID);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,6 +76,27 @@ public class UserProfileActivity extends AppCompatActivity {
             showUserProfile(firebaseUser);
         }
     }
+
+    private void swipeToRefresh() {
+        // Look up for the Swipe Container
+        swipeContainer = findViewById(R.id.swipeContainer);
+
+        // Setup Refresh Listener which triggers new data loading
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Code to refresh goes here. make sure to call swipeContainer.setRefreshing(false) once the refresh is complete
+                startActivity(getIntent());
+                finish();
+                overridePendingTransition(0,0);
+                swipeContainer.setRefreshing(false);
+            }
+        });
+        // Configure refresh colors
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,android.R.color.holo_green_light,android.R.color.holo_orange_light,android.R.color.holo_red_light);
+
+    }
+
     //Users coming to UserProfileActivity after successful registration
     private void checkIfEmailVerified(FirebaseUser firebaseUser) {
        if (!firebaseUser.isEmailVerified()){
@@ -100,24 +128,35 @@ public class UserProfileActivity extends AppCompatActivity {
 
         //Extracting User Reference from Database for "Registered Users"
         DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Registered Users");
-        referenceProfile.child(userID);
-        referenceProfile.addListenerForSingleValueEvent(new ValueEventListener() {
+        referenceProfile.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ReadWriteUserDetails readUserDetails = snapshot.getValue(ReadWriteUserDetails.class);
-                if(readUserDetails != null){
+                DataSnapshot userDetailsSnapshot = snapshot.child("phone"); // Assuming "phone" is the key under the "userId" node
+
+                // Log the value of the "phone" field
+                String phone = snapshot.child("phone").getValue(String.class);
+
+                ReadWriteUserDetails readUserDetails = new ReadWriteUserDetails(phone);
+                if (readUserDetails != null) {
                     FullName = firebaseUser.getDisplayName();
                     email = firebaseUser.getEmail();
-                    phone = readUserDetails.phone;
+                    phoneNum = readUserDetails.phone;
 
                     TextView_Welcome.setText("Welcome," + FullName + "!");
-                    T_VShowFullName.setText(FullName);
-                    T_VShowEmail.setText(email);
-                    T_VShowPhoneNum.setText(phone);
+                    textViewFullName.setText(FullName);
+                    textViewEmail.setText(email);
+                    textViewPhoneNum.setText(phoneNum);
+
+                    // Set User DP (after user has uploaded his picture)
+                    Uri uri = firebaseUser.getPhotoUrl();
+
+                    // ImageViewer setImageURI() should not be user with regular URIs. So we are using Picasso
+                    Picasso.with(UserProfileActivity.this).load(uri).into(imageView);
+
+                } else {
+                    Toast.makeText(UserProfileActivity.this,"something went wrong!",Toast.LENGTH_LONG).show();
                 }
-
                 progressBar.setVisibility(View.GONE);
-
             }
 
             @Override
@@ -145,10 +184,10 @@ public class UserProfileActivity extends AppCompatActivity {
             startActivity(getIntent());
             finish();
             overridePendingTransition(0,0);
-        } /*else if (id == R.id.menu_update_profile){
+        } else if (id == R.id.menu_update_profile){
             Intent intent = new Intent(UserProfileActivity.this,UpdateProfileActivity.class);
             startActivity(intent);
-        } else if (id == R.id.menu_update_Email){
+        } /*else if (id == R.id.menu_update_Email){
             Intent intent = new Intent(UserProfileActivity.this,UpdateEmailActivity.class);
             startActivity(intent);
         } else if (id == R.id.menu_settings){
@@ -156,10 +195,10 @@ public class UserProfileActivity extends AppCompatActivity {
         } else if (id == R.id.menu_change_pwd){
             Intent intent = new Intent(UserProfileActivity.this,ChangePasswordActivity.class);
             startActivity(intent);
-        } else if (id == R.id.menu_delete_profile){
+        } */else if (id == R.id.menu_delete_profile){
             Intent intent = new Intent(UserProfileActivity.this,DeleteProfileActivity.class);
             startActivity(intent);
-        } */else if (id == R.id.menu_logout) {
+        } else if (id == R.id.menu_logout) {
             authProfile.signOut();
             Toast.makeText(UserProfileActivity.this,"Logged Out", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(UserProfileActivity.this,MainActivity.class);
