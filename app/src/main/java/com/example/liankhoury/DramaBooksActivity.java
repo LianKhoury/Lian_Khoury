@@ -10,5 +10,9 @@ public class DramaBooksActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drama_books);
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 }

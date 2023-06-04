@@ -10,5 +10,10 @@ public class DetectiveBooksActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detective_books);
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
     }
 }

@@ -10,5 +10,10 @@ public class MysteryBooksActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mystery_books);
+
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 }

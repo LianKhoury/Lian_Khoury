@@ -10,5 +10,10 @@ public class HorrorBooksActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horror_books);
+
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 }

@@ -10,5 +10,10 @@ public class PoetryBooksActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_poetry_books);
+
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 }

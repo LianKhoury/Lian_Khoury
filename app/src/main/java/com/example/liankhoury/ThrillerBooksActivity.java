@@ -10,5 +10,11 @@ public class ThrillerBooksActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thriller_books);
+
+
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 }

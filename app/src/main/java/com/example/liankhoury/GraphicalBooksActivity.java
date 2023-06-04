@@ -10,5 +10,9 @@ public class GraphicalBooksActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graphical_books);
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 }

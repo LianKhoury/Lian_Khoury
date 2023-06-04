@@ -10,5 +10,9 @@ public class CrimeBooksActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crime_books);
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 }
