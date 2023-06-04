@@ -192,17 +192,6 @@ public class UserProfileActivity extends AppCompatActivity {
         } else if (id == R.id.menu_update_profile){
             Intent intent = new Intent(UserProfileActivity.this,UpdateProfileActivity.class);
             startActivity(intent);
-        } /*else if (id == R.id.menu_update_Email){
-            Intent intent = new Intent(UserProfileActivity.this,UpdateEmailActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.menu_settings){
-            Toast.makeText(UserProfileActivity.this,"menu settings",Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.menu_change_pwd){
-            Intent intent = new Intent(UserProfileActivity.this,ChangePasswordActivity.class);
-            startActivity(intent);
-        } */else if (id == R.id.menu_delete_profile){
-            Intent intent = new Intent(UserProfileActivity.this,DeleteProfileActivity.class);
-            startActivity(intent);
         } else if (id == R.id.menu_logout) {
             authProfile.signOut();
             Toast.makeText(UserProfileActivity.this,"Logged Out", Toast.LENGTH_LONG).show();
