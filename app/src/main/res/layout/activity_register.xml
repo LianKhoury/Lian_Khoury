@@ -184,10 +184,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/buttonRegister"
             android:layout_marginLeft="70dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="70dp"
             android:backgroundTint="@android:color/white"
-            android:onClick="cancel"
             android:text="Cancel"
             android:textColor="@android:color/black" />
 
