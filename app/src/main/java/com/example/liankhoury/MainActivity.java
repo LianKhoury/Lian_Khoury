@@ -75,24 +75,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
                 break;
             }
-            case R.id.settings_menu:
-                Toast.makeText(MainActivity.this, "sittings clicked", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.logout_menu:
-                Toast.makeText(MainActivity.this, "logout clicked", Toast.LENGTH_SHORT).show();
+            case R.id.profile_menu:
+                Toast.makeText(MainActivity.this, "profile clicked", Toast.LENGTH_SHORT).show();
+                Intent j = new Intent(this, UserProfileActivity.class);
+                startActivity(j);
                 break;
             case R.id.about_menu: {
                 //open the about activity when about menu selected
                 //this is from where , and the second parameter is to where
                 Toast.makeText(MainActivity.this, "about clicked", Toast.LENGTH_SHORT).show();
-                Intent j = new Intent(this, AboutActivity.class);
-                startActivity(j);
-                break;
-            }
-            case R.id.list_menu: {
-                Toast.makeText(MainActivity.this, "list clicked", Toast.LENGTH_SHORT).show();
-                Intent z = new Intent(this, ListActivity.class);
-                startActivity(z);
+                Intent intent_about = new Intent(this, AboutActivity.class);
+                startActivity(intent_about);
                 break;
             }
         }

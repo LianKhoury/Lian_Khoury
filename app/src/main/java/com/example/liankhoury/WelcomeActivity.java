@@ -4,12 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,15 +22,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener {
+public abstract class WelcomeActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private CardView cardv1,cardv2,cardv3,cardv4,cardv5,cardv6,cardv7,cardv8,cardv9,cardv10,cardv11,cardv12,cardv13,cardv14,cardv16,cardv15,cardv17,cardv18,cardv19,cardv20;
+    private CardView cardv1, cardv2, cardv3, cardv4, cardv5, cardv6, cardv7, cardv8, cardv9, cardv10, cardv11, cardv12, cardv13, cardv14, cardv16, cardv15, cardv17, cardv18, cardv19, cardv20;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-
 
 
         cardv1 = (CardView) findViewById(R.id.cv1);
@@ -75,225 +76,129 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
         cardv20.setOnClickListener(this);
 
 
-        Intent notification = new Intent(this,Receiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this,1,notification,PendingIntent.FLAG_UPDATE_CURRENT);
+        Intent notification = new Intent(this, Receiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, notification, PendingIntent.FLAG_UPDATE_CURRENT);
 
         AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
-        alarmManager.setRepeating(AlarmManager.RTC,System.currentTimeMillis(), 3000, pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC, System.currentTimeMillis(), 3000, pendingIntent);
 
-        }
-
-
-
-
-   /* private void setSingleEvent(RelativeLayout Rl) {
-        // Loop all child item from welcome grid
-        for (int i = 0 ; i<Rl.getChildCount()-; i++)
-        {
-            CardView cardView = (CardView)Rl.getChildAt(i);
-            int finalI = i;
-            cardView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(WelcomeActivity.this,"Clicked at index" + finalI,Toast.LENGTH_SHORT).show();
-                    if (finalI == 0) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, AdventureBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-                    if (finalI == 1) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, ClassicBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-                    if (finalI == 2) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, ComicBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-                    if (finalI == 3) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, CrimeBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-                    if (finalI == 4) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, DramaBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-                    if (finalI == 5) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, DetectiveBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-                    if (finalI == 6) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, FantasyBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-                    if (finalI == 7) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, FairytaleBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-                    if (finalI == 8) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, FableBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-                    if (finalI == 9) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, GraphicalBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-                    if (finalI == 10) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, LegendBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-                    if (finalI == 11) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, MysteryBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-                    if (finalI == 12) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, MythologyBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-                    if (finalI == 13) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, PoetryBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-                    if (finalI == 14) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, ReligionBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-                    if (finalI == 15) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, RomanceBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-                    if (finalI == 16) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, ScienceBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-                    if (finalI == 17) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, ScienceFictionBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-                    if (finalI == 18) {
-                        Intent i_BookList = new Intent(WelcomeActivity.this, ThrillerBooksActivity.class);
-                        startActivity(i_BookList);
-                    }
-
-
-                }
-            });
-        }
-    }*/
+    }
 
     public boolean onCreateOptionsMenu(@NonNull Menu menu) {
         getMenuInflater().inflate(R.menu.menu_example, menu);
         return true;
     }
+    @Override
+    public void onPointerCaptureChanged ( boolean hasCapture){
+        super.onPointerCaptureChanged(hasCapture);}
 
-    public void onClick(View v) {
+    @Override
+    public void onClick (View v){
         Intent i;
 
         switch (v.getId()) {
-            case R.id.cv1 :
-                i = new Intent(WelcomeActivity.this,AdventureBooksActivity.class);
+            case R.id.cv1:
+                i = new Intent(WelcomeActivity.this, AdventureBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv2 :
-                i = new Intent(WelcomeActivity.this,ClassicBooksActivity.class);
+            case R.id.cv2:
+                i = new Intent(WelcomeActivity.this, ClassicBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv3 :
-                i = new Intent(WelcomeActivity.this,ComicBooksActivity.class);
+            case R.id.cv3:
+                i = new Intent(WelcomeActivity.this, ComicBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv4 :
-                i = new Intent(WelcomeActivity.this,CrimeBooksActivity.class);
+            case R.id.cv4:
+                i = new Intent(WelcomeActivity.this, CrimeBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv5 :
-                i = new Intent(WelcomeActivity.this,DramaBooksActivity.class);
+            case R.id.cv5:
+                i = new Intent(WelcomeActivity.this, DramaBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv6 :
-                i = new Intent(WelcomeActivity.this,DetectiveBooksActivity.class);
+            case R.id.cv6:
+                i = new Intent(WelcomeActivity.this, DetectiveBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv7 :
-                i = new Intent(WelcomeActivity.this,FantasyBooksActivity.class);
+            case R.id.cv7:
+                i = new Intent(WelcomeActivity.this, FantasyBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv8 :
-                i = new Intent(WelcomeActivity.this,FairytaleBooksActivity.class);
+            case R.id.cv8:
+                i = new Intent(WelcomeActivity.this, FairytaleBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv9 :
-                i = new Intent(WelcomeActivity.this,FableBooksActivity.class);
+            case R.id.cv9:
+                i = new Intent(WelcomeActivity.this, FableBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv10 :
-                i = new Intent(WelcomeActivity.this,GraphicalBooksActivity.class);
+            case R.id.cv10:
+                i = new Intent(WelcomeActivity.this, GraphicalBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv11 :
-                i = new Intent(WelcomeActivity.this,HorrorBooksActivity.class);
+            case R.id.cv11:
+                i = new Intent(WelcomeActivity.this, HorrorBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv12 :
-                i = new Intent(WelcomeActivity.this,LegendBooksActivity.class);
+            case R.id.cv12:
+                i = new Intent(WelcomeActivity.this, LegendBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv13 :
-                i = new Intent(WelcomeActivity.this,MysteryBooksActivity.class);
+            case R.id.cv13:
+                i = new Intent(WelcomeActivity.this, MysteryBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv14 :
-                i = new Intent(WelcomeActivity.this,MythologyBooksActivity.class);
+            case R.id.cv14:
+                i = new Intent(WelcomeActivity.this, MythologyBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv15 :
-                i = new Intent(WelcomeActivity.this,PoetryBooksActivity.class);
+            case R.id.cv15:
+                i = new Intent(WelcomeActivity.this, PoetryBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv16 :
-                i = new Intent(WelcomeActivity.this,ReligionBooksActivity.class);
+            case R.id.cv16:
+                i = new Intent(WelcomeActivity.this, ReligionBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv17 :
-                i = new Intent(WelcomeActivity.this,RomanceBooksActivity.class);
+            case R.id.cv17:
+                i = new Intent(WelcomeActivity.this, RomanceBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv18 :
-                i = new Intent(WelcomeActivity.this,ScienceBooksActivity.class);
+            case R.id.cv18:
+                i = new Intent(WelcomeActivity.this, ScienceBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv19 :
-                i = new Intent(WelcomeActivity.this,ScienceFictionBooksActivity.class);
+            case R.id.cv19:
+                i = new Intent(WelcomeActivity.this, ScienceFictionBooksActivity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv20 :
-                i = new Intent(WelcomeActivity.this,ThrillerBooksActivity.class);
+            case R.id.cv20:
+                i = new Intent(WelcomeActivity.this, ThrillerBooksActivity.class);
                 startActivity(i);
                 break;
         }
 
     }
 
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-        super.onPointerCaptureChanged(hasCapture);
-    }
 }
 
