@@ -17,6 +17,15 @@
         android:theme="@style/Theme.LianKhoury"
         tools:targetApi="31">
         <activity
+            android:name=".AdventureBook3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".AdventureBook2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".AdventureBook1Activity"
+            android:exported="false" />
+        <activity
             android:name=".AdventureBooksActivity"
             android:exported="false" />
         <activity

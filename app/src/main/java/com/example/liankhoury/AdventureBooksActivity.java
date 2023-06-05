@@ -40,34 +40,30 @@ public class AdventureBooksActivity extends AppCompatActivity implements View.On
 
         switch (v.getId()) {
             case R.id.cv1:
-                i = new Intent(AdventureBooksActivity.this, AdventureBooksActivity.class);
+                i = new Intent(AdventureBooksActivity.this, AdventureBook1Activity.class);
                 startActivity(i);
                 break;
 
             case R.id.cv2:
-                i = new Intent(AdventureBooksActivity.this, ClassicBooksActivity.class);
+                i = new Intent(AdventureBooksActivity.this, AdventureBook2Activity.class);
                 startActivity(i);
                 break;
 
             case R.id.cv3:
-                i = new Intent(AdventureBooksActivity.this, ComicBooksActivity.class);
+                i = new Intent(AdventureBooksActivity.this, AdventureBook3Activity.class);
                 startActivity(i);
                 break;
 
             case R.id.cv4:
-                i = new Intent(AdventureBooksActivity.this, CrimeBooksActivity.class);
+                i = new Intent(AdventureBooksActivity.this, AdventureBook4Activity.class);
                 startActivity(i);
                 break;
 
             case R.id.cv5:
-                i = new Intent(AdventureBooksActivity.this, DramaBooksActivity.class);
+                i = new Intent(AdventureBooksActivity.this, AdventureBook5Activity.class);
                 startActivity(i);
                 break;
 
-            case R.id.cv6:
-                i = new Intent(AdventureBooksActivity.this, DetectiveBooksActivity.class);
-                startActivity(i);
-                break;
         }
     }
 }
