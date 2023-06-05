@@ -3,12 +3,17 @@ package com.example.liankhoury;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.app.NavUtils;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,6 +41,8 @@ public class UploadProfilePicActivity extends AppCompatActivity {
     private StorageReference storageReference;
     private FirebaseUser firebaseUser;
     private static final int PICK_IMAGE_REQUEST = 1;
+    private static final int PERMISSION_REQUEST_CAMERA = 100;
+    private static final int REQUEST_IMAGE_CAPTURE = 1;
     private Uri uriImage;
 
 
@@ -49,6 +56,7 @@ public class UploadProfilePicActivity extends AppCompatActivity {
 
         Button buttonUploadPicChoose = findViewById(R.id.upload_pic_choose_button);
         Button buttonUploadPic = findViewById(R.id.upload_pic_button);
+        Button buttonTakePic = findViewById(R.id.button_takeAPic);
         progressBar = findViewById(R.id.progressBar);
         imageViewUploadPic = findViewById(R.id.imageView_profile_dp);
 
@@ -62,6 +70,15 @@ public class UploadProfilePicActivity extends AppCompatActivity {
         // Set User's current DP in ImageView (if uploaded already). We will Picasso since imageViewer setImage
         // Regular URIs.
         Picasso.with(UploadProfilePicActivity.this).load(uri).into(imageViewUploadPic);
+
+        buttonTakePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                takePictureFromCamera();
+            }
+        });
+
+
 
         buttonUploadPicChoose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +104,22 @@ public class UploadProfilePicActivity extends AppCompatActivity {
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(intent,PICK_IMAGE_REQUEST);
     }
+
+    private void takePictureFromCamera() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, PERMISSION_REQUEST_CAMERA);
+        } else {
+            launchCameraIntent();
+        }
+    }
+
+    private void launchCameraIntent() {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -184,6 +217,5 @@ public class UploadProfilePicActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 
 }

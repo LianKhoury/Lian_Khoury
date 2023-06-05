@@ -2,18 +2,13 @@ package com.example.liankhoury;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
-public class AdventureBook1Activity extends AppCompatActivity {
+public class AdventureBook5Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adventure_book1);
-
-
+        setContentView(R.layout.activity_adventure_book5);
     }
 }

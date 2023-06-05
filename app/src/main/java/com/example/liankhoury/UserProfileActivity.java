@@ -33,7 +33,7 @@ import java.util.concurrent.locks.ReadWriteLock;
 
 public class UserProfileActivity extends AppCompatActivity {
 
-    private TextView TextViewProfile,textViewFullName,textViewEmail,textViewPhoneNum,TextView_Welcome;
+    private TextView TextViewProfile,textViewFullName,textViewEmail,textViewPhoneNum;
     private ProgressBar progressBar;
     private String FullName,email,phoneNum;
     private ImageView imageView;
@@ -51,7 +51,6 @@ public class UserProfileActivity extends AppCompatActivity {
         swipeToRefresh();   
 
         TextViewProfile = findViewById(R.id.TextViewProfile);
-        TextView_Welcome  = findViewById(R.id.TextView_Welcome);
         textViewFullName = findViewById(R.id.T_VShowFullName);
         textViewEmail = findViewById(R.id.T_VShowEmail);
         textViewPhoneNum = findViewById(R.id.T_VShowPhoneNum);
@@ -155,7 +154,7 @@ public class UserProfileActivity extends AppCompatActivity {
                     email = firebaseUser.getEmail();
                     phoneNum = readUserDetails.phone;
 
-                    TextView_Welcome.setText("Welcome," + FullName + "!");
+                    TextViewProfile.setText("Welcome," + FullName + "!");
                     textViewFullName.setText(FullName);
                     textViewEmail.setText(email);
                     textViewPhoneNum.setText(phoneNum);

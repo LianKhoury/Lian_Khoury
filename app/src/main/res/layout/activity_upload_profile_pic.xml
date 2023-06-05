@@ -33,14 +33,24 @@
             android:layout_marginLeft="70dp"
             android:backgroundTint="@color/teal_200"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/teal_200"
+            android:layout_marginRight="70dp"
+            android:layout_marginLeft="70dp"
+            android:id="@+id/button_takeAPic"
+            android:text="take a picture"
+            android:layout_below="@id/upload_pic_choose_button"
+            />
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="400dp"
             android:id="@+id/imageView_profile_dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/border"
-            android:layout_below="@+id/upload_pic_choose_button"
+            android:layout_below="@+id/button_takeAPic"
             />
 
         <Button
