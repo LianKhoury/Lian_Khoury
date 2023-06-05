@@ -10,59 +10,41 @@
     android:padding="10dp"
     tools:context=".WelcomeActivity">
 
-
     <RelativeLayout
-        android:layout_weight="2"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="match_parent"
+        android:id="@+id/Rl">
 
         <TextView
-            android:id="@+id/textGrid"
+            android:id="@+id/textWelcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:fontFamily="@font/lobster"
             android:text="@string/book_genres"
             android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
             android:textSize="32sp"
             />
 
         <TextView
+            android:id="@+id/text_sentence_welcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/textGrid"
-            android:layout_alignBottom="@+id/textGrid"
-            android:layout_marginTop="42dp"
-            android:layout_marginBottom="-47dp"
-            android:fontFamily="serif"
+            android:layout_below="@+id/textWelcome"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/lobster"
             android:text="you're only one book away from a good mood :)"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="@color/black"
-            android:textSize="18dp"
-            />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <GridLayout
-            android:id="@+id/GridW"
-            android:columnCount="2"
-            android:rowCount="10"
-            android:alignmentMode="alignMargins"
-            android:columnOrderPreserved="false"
-            android:layout_weight="11"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:padding="14dp"
-            >
-
+            android:textSize="18dp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="160dp">
+            android:layout_height="130dp"
+            android:id="@+id/cv1"
+            android:layout_below="@+id/text_sentence_welcome">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -71,31 +53,572 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
-                    android:src="@drawable/classicbooksimg"
-                    />
-
+                    android:src="@drawable/adventurebooksimg" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="Classic Books"
+                    android:layout_marginTop="100dp"
+                    android:text="Adventure Books"
                     android:textColor="@color/black"
                     android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
                     android:fontFamily="@font/lobster"/>
-
-
-
 
             </RelativeLayout>
 
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv2"
+            android:layout_below="@id/cv1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/classicbooksimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Classic Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 
-        </GridLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv3"
+            android:layout_below="@id/cv2">
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/comicbooksimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Comic Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv4"
+            android:layout_below="@id/cv3">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/crimebooksimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Crime Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv5"
+            android:layout_below="@id/cv4">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/dramabooksimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Drama Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv6"
+            android:layout_below="@id/cv5">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/detectivebooksimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Detective Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv7"
+            android:layout_below="@id/cv6">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/fantasybooksimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Fantasy Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv8"
+            android:layout_below="@id/cv7">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/fairytalebooksimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Fairy Tale Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv9"
+            android:layout_below="@id/cv8">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/fablebooksimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Fable Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv10"
+            android:layout_below="@id/cv9">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/graphicnovelimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Graphic Novel Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv11"
+            android:layout_below="@id/cv10">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/horrorbooksimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Horror Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv12"
+            android:layout_below="@id/cv11">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/legendbooksimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Legend Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv13"
+            android:layout_below="@id/cv12">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/mysterybooksimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Mystery Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv14"
+            android:layout_below="@id/cv13">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/mythologybookimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Mythology Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv15"
+            android:layout_below="@id/cv14">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/poetrybooksimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Poetry Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv16"
+            android:layout_below="@id/cv15">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/religionbooksimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Religion Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv17"
+            android:layout_below="@id/cv16">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/romancebooksimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Romance Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv18"
+            android:layout_below="@id/cv17">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/sciencebooksimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Science Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv19"
+            android:layout_below="@id/cv18">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/sciencefictionbooksimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Science Fiction Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv20"
+            android:layout_below="@id/cv19">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/thrillerbooksimg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Thriller Books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
     </RelativeLayout>
 
-
 </ScrollView>
-

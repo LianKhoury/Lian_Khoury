@@ -8,31 +8,48 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.125" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/drawable/notification_icon.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_about.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_adventure_books.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_camera.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_classic_books.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_comic_books.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_crime_books.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_delete_profile.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_detective_books.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_drama_books.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_fable_books.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_fairytale_books.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_fantasy_books.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_forgot_pwd.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_gallery.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_graphical_books.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_help.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_horror_books.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_legend_books.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_list.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_list_five.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_list_one.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_list_zero.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_mystery_books.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_mysterybooks.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_mythology_books.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_poetry_books.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_religion_books.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_romance_books.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_science_books.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_science_fiction_books.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_sittings.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_start_page.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_thiller_books.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_thriller_books.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_update_profile.xml" value="0.1765625" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_upload_profile_pic.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_user_profile.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_welcom.xml" value="0.253125" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_welcome.xml" value="0.24768518518518517" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_welcome.xml" value="0.22745098039215686" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activitygallery.xml" value="0.2359375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/galleryitem.xml" value="0.2359375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/menu/common_menu.xml" value="0.1" />

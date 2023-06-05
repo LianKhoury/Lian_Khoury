@@ -16,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LianKhoury"
         tools:targetApi="31">
-
+        <activity
+            android:name=".AdventureBooksActivity"
+            android:exported="false" />
         <activity
             android:name=".UpdateProfileActivity"
             android:exported="false" />
@@ -87,9 +89,6 @@
             android:name=".CrimeBooksActivity"
             android:exported="false" />
         <activity
-            android:name=".HistoricalBooksActivity"
-            android:exported="false" />
-        <activity
             android:name=".ScienceBooksActivity"
             android:exported="false" />
         <activity
@@ -132,6 +131,7 @@
             android:name=".MyIntentService"
             android:enabled="true"
             android:exported="false" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

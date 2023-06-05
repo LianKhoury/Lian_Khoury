@@ -1,9 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FairytaleBooksActivity">
+    android:background="#22EAD9"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".WelcomeActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/text_adventure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The first adventure novel that you ever read is hard to forget: after all, we all remember the first time our imaginations were lit by whispers of buried treasure, lost worlds, and faraway jungles. As Jane Eyre says: “It is in vain to say human beings ought to be satisfied with tranquility: they must have action; and they will make it if they cannot find it.”
+Luckily, we’ve made the act of finding action easy for you! We have 100 of the best adventure books for you in this post, ranging from rollicking journeys over land to tales of high-stakes survival on the sea. Who knows where your next book will take you? Let’s find out."
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/lobster"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv1"
+            android:layout_below="@+id/text_adventure">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/adven1" />
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Don Quixote by Miguel de Cervantes"
+                    android:textColor="@color/black"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:textSize="12sp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv2"
+            android:layout_below="@id/cv1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/adven2" />
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="100dp"
+                    android:text="The Three Musketeers by Alexandre Dumas"
+                    android:textColor="@color/black"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:textSize="12sp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv3"
+            android:layout_below="@id/cv2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/adven3" />
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Treasure Island by Robert Louis Stevenson"
+                    android:textColor="@color/black"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:textSize="12sp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv4"
+            android:layout_below="@id/cv3">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/adven4" />
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="King Solomon's Mines by H. Rider Haggard and A. C. Michael"
+                    android:textColor="@color/black"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:textSize="12sp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:id="@+id/cv5"
+            android:layout_below="@id/cv4">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/adven5" />
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="Journey to the Center of the Earth by Jules Verne"
+                    android:textColor="@color/black"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:textSize="12sp"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/lobster"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+</ScrollView>
