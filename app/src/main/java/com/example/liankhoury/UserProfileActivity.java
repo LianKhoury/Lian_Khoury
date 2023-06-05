@@ -120,7 +120,7 @@ public class UserProfileActivity extends AppCompatActivity {
         //SetUp the Alert Builder
         AlertDialog.Builder builder = new AlertDialog.Builder(UserProfileActivity.this);
         builder.setTitle("Email Not Verified");
-        builder.setMessage("P;ease verify your Email now. You can not login without email verification next time.");
+        builder.setMessage("Please verify your Email now. You can not login without email verification next time.");
 
         //Open Email App if User clicks/taps Continue button
         builder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
