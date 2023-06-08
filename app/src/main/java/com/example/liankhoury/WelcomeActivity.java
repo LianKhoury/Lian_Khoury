@@ -22,7 +22,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public abstract class WelcomeActivity extends AppCompatActivity implements View.OnClickListener {
+public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     private CardView cardv1, cardv2, cardv3, cardv4, cardv5, cardv6, cardv7, cardv8, cardv9, cardv10, cardv11, cardv12, cardv13, cardv14, cardv16, cardv15, cardv17, cardv18, cardv19, cardv20;
 

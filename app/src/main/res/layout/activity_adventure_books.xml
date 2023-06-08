@@ -40,7 +40,20 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:layout_alignParentLeft="true"
-                        android:src="@drawable/adven1" />
+                        android:src="@drawable/adven1"
+                        android:id="@+id/image1_adventure"/>
+
+                    <ImageButton
+                        android:id="@+id/add_to_fav1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_below="@+id/name_adventure1"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="23dp"
+                        android:src="@drawable/ic_baseline_favorite_border_24"
+                        android:backgroundTintMode="screen"/>
+
 
                     <TextView
                         android:layout_width="200dp"
@@ -52,7 +65,9 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                         android:layout_centerInParent="true"
                         android:textSize="12sp"
                         android:layout_centerHorizontal="true"
-                        android:fontFamily="@font/lobster"/>
+                        android:fontFamily="@font/lobster"
+                        android:id="@+id/name_adventure1"
+                       />
 
                 </RelativeLayout>
 
@@ -74,12 +89,25 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                         android:layout_alignParentLeft="true"
                         android:src="@drawable/adven2" />
 
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_below="@+id/name_adventure2"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="23dp"
+                        android:id="@+id/add_to_fav2"
+                        android:src="@drawable/ic_baseline_favorite_border_24"
+                        android:backgroundTintMode="screen"/>
+
+
                     <TextView
                         android:layout_width="200dp"
                         android:layout_height="300dp"
                         android:layout_marginTop="100dp"
                         android:text="The Three Musketeers by Alexandre Dumas"
                         android:textColor="@color/black"
+                        android:id="@+id/name_adventure2"
                         android:layout_alignParentRight="true"
                         android:layout_centerInParent="true"
                         android:textSize="12sp"
@@ -106,6 +134,18 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                         android:layout_alignParentLeft="true"
                         android:src="@drawable/adven3" />
 
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_below="@+id/name_adventure3"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="23dp"
+                        android:id="@+id/add_to_fav3"
+                        android:src="@drawable/ic_baseline_favorite_border_24"
+                        android:backgroundTintMode="screen"/>
+
+
                     <TextView
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
@@ -114,6 +154,7 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                         android:textColor="@color/black"
                         android:layout_alignParentRight="true"
                         android:layout_centerInParent="true"
+                        android:id="@id/name_adventure3"
                         android:textSize="12sp"
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/lobster"/>
@@ -138,6 +179,18 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                         android:layout_alignParentLeft="true"
                         android:src="@drawable/adven4" />
 
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_below="@+id/name_adventure4"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="23dp"
+                        android:id="@+id/add_to_fav4"
+                        android:src="@drawable/ic_baseline_favorite_border_24"
+                        android:backgroundTintMode="screen"/>
+
+
                     <TextView
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
@@ -146,6 +199,7 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                         android:textColor="@color/black"
                         android:layout_alignParentRight="true"
                         android:layout_centerInParent="true"
+                        android:id="@id/name_adventure4"
                         android:textSize="12sp"
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/lobster"/>
@@ -170,6 +224,17 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                         android:layout_alignParentLeft="true"
                         android:src="@drawable/adven5" />
 
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_below="@+id/name_adventure5"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="23dp"
+                        android:id="@+id/add_to_fav5"
+                        android:src="@drawable/ic_baseline_favorite_border_24"
+                        android:backgroundTintMode="screen"/>
+
                     <TextView
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
@@ -178,6 +243,7 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                         android:textColor="@color/black"
                         android:layout_alignParentRight="true"
                         android:layout_centerInParent="true"
+                        android:id="@id/name_adventure5"
                         android:textSize="12sp"
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/lobster"/>
