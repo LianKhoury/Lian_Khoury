@@ -4,6 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClassicBook3Activity">
+    tools:context=".AdventureBook1Activity"
+    android:background="@color/light_gray">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="15dp"
+        android:background="@color/white"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_classic3_name"
+            android:layout_marginTop="30dp"
+            android:text="The Alchemist by Paulo Coelho"
+            android:fontFamily="@font/lobster"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            />
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/classic3"
+            android:src="@drawable/classic3"
+            android:layout_below="@+id/textView_classic3_name"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This allegorical tale, often recommended as a self-help book, follows young shepherd Santiago as he journeys to Egypt searching for a hidden treasure. A parable telling readers that the universe can help them realize their dreams if they only focus their energy on them, Coelho’s short novel has endured the test of time and remains a bestseller today."
+            android:layout_below="@id/classic3"
+            android:layout_marginTop="15dp"
+            />
+    </RelativeLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

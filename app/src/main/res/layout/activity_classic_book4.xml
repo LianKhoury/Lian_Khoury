@@ -4,6 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClassicBook4Activity">
+    tools:context=".AdventureBook1Activity"
+    android:background="@color/light_gray">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="15dp"
+        android:background="@color/white"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_classic4_name"
+            android:layout_marginTop="30dp"
+            android:text="American Indian Stories, Legends, and Other Writings by Zitkála-Šá"
+            android:fontFamily="@font/lobster"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            />
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/classic4"
+            android:src="@drawable/classic4"
+            android:layout_below="@+id/textView_classic4_name"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zitkála-Šá’s storiesinvite readers into the world of Sioux settlement, sharing childhood memories, legends, and folktales, and a memoir account of the Native American author’s transition into Western culture when she left home. Told in beautiful, fluid language, this is a must-read book."
+            android:layout_below="@id/classic4"
+            android:layout_marginTop="15dp"
+            />
+    </RelativeLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

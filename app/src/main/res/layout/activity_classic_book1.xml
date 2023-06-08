@@ -4,6 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClassicBook1Activity">
+    tools:context=".AdventureBook1Activity"
+    android:background="@color/light_gray">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="15dp"
+        android:background="@color/white"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_classic1_name"
+            android:layout_marginTop="30dp"
+            android:text="One Hundred Years of Solitude by Gabriel García Márquez"
+            android:fontFamily="@font/lobster"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            />
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/classic1"
+            android:src="@drawable/classic1"
+            android:layout_below="@+id/textView_classic1_name"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This milestone Spanish novel may as well be titled 100 Years on Everyone’s Must-Read List — it’s just a titan in the world literature canon. We could go on about its remarkable narrative technique, beguiling voice, and sprawling cast of characters spanning seven generations. Its famous first line may be all that’s needed to win you over: “Many years later, as he faced the firing squad, Colonel Aureliano Buendía was to remember that distant afternoon when his father took him to discover ice.”"
+            android:layout_below="@id/classic1"
+            android:layout_marginTop="15dp"
+            />
+    </RelativeLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

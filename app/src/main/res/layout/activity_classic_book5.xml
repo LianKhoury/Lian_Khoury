@@ -4,6 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClassicBook5Activity">
+    tools:context=".AdventureBook1Activity"
+    android:background="@color/light_gray">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="15dp"
+        android:background="@color/white"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_classic5_name"
+            android:layout_marginTop="30dp"
+            android:text="And Then There Were None by Agatha Christie"
+            android:fontFamily="@font/lobster"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            />
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/classic5"
+            android:src="@drawable/classic5"
+            android:layout_below="@+id/textView_classic5_name"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="First, there were ten who arrived on the island. Strangers to one another, they shared one similarity: they had all murdered in the past. And when people begin dropping like flies, they realize that they are the ones being murdered now. An example of a mystery novel done right, this timeless classic was penned by none other than the Queen of Mystery herself."
+            android:layout_below="@id/classic5"
+            android:layout_marginTop="15dp"
+            />
+    </RelativeLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

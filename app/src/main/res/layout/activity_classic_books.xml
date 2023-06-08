@@ -14,11 +14,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
-            android:id="@+id/text_adventure"
+            android:id="@+id/text_classic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="The first adventure novel that you ever read is hard to forget: after all, we all remember the first time our imaginations were lit by whispers of buried treasure, lost worlds, and faraway jungles. As Jane Eyre says: “It is in vain to say human beings ought to be satisfied with tranquility: they must have action; and they will make it if they cannot find it.”
-Luckily, we’ve made the act of finding action easy for you! We have 100 of the best adventure books for you in this post, ranging from rollicking journeys over land to tales of high-stakes survival on the sea. Who knows where your next book will take you? Let’s find out."
+            android:text="Ever been caught up in a conversation about books and felt yourself cringe over your literary blind spots? Classic literature can be intimidating, but getting acquainted with the canon isn't just a form of torture cooked up by your high school English teacher: instead, an appreciation for the classics will help you see everything that's come since in a different light, and pick up on allusions that you'll begin to notice everywhere. Above all, they're just great reads — they've stood the test of time for a reason!
+If you've always wanted to tackle the classics but never knew quite where to begin, we've got you covered. We've hand-selected 100 classic books to read, written by authors spanning continents and millennia. From love stories to murder mysteries, nonfiction to fantasy, there's something for everybody."
             android:textColor="@color/black"
             android:textSize="16sp"
             android:layout_centerHorizontal="true"
@@ -29,7 +29,7 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
             android:layout_width="match_parent"
             android:layout_height="130dp"
             android:id="@+id/cv1"
-            android:layout_below="@+id/text_adventure">
+            android:layout_below="@+id/text_classic">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -39,14 +39,14 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentLeft="true"
-                    android:src="@drawable/adven1"
-                    android:id="@+id/image1_adventure"/>
+                    android:src="@drawable/classic1"
+                    android:id="@+id/image1_classic"/>
 
                 <ImageButton
                     android:id="@+id/add_to_fav1"
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
-                    android:layout_below="@+id/name_adventure1"
+                    android:layout_below="@+id/name_classic1"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginTop="23dp"
@@ -58,14 +58,14 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="100dp"
-                    android:text="Don Quixote by Miguel de Cervantes"
+                    android:text="One Hundred Years of Solitude by Gabriel García Márquez"
                     android:textColor="@color/black"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
                     android:textSize="12sp"
                     android:layout_centerHorizontal="true"
                     android:fontFamily="@font/lobster"
-                    android:id="@+id/name_adventure1"
+                    android:id="@+id/name_classic1"
                     />
 
             </RelativeLayout>
@@ -86,12 +86,12 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentLeft="true"
-                    android:src="@drawable/adven2" />
+                    android:src="@drawable/classic2" />
 
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
-                    android:layout_below="@+id/name_adventure2"
+                    android:layout_below="@+id/name_classic2"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginTop="23dp"
@@ -104,9 +104,9 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                     android:layout_width="200dp"
                     android:layout_height="300dp"
                     android:layout_marginTop="100dp"
-                    android:text="The Three Musketeers by Alexandre Dumas"
+                    android:text="The Age of Innocence by Edith Wharton"
                     android:textColor="@color/black"
-                    android:id="@+id/name_adventure2"
+                    android:id="@+id/name_classic2"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
                     android:textSize="12sp"
@@ -131,12 +131,12 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentLeft="true"
-                    android:src="@drawable/adven3" />
+                    android:src="@drawable/classic3" />
 
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
-                    android:layout_below="@+id/name_adventure3"
+                    android:layout_below="@+id/name_classic3"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginTop="23dp"
@@ -149,11 +149,11 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="100dp"
-                    android:text="Treasure Island by Robert Louis Stevenson"
+                    android:text="The Alchemist by Paulo Coelho"
                     android:textColor="@color/black"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
-                    android:id="@id/name_adventure3"
+                    android:id="@id/name_classic3"
                     android:textSize="12sp"
                     android:layout_centerHorizontal="true"
                     android:fontFamily="@font/lobster"/>
@@ -176,12 +176,12 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentLeft="true"
-                    android:src="@drawable/adven4" />
+                    android:src="@drawable/classic4" />
 
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
-                    android:layout_below="@+id/name_adventure4"
+                    android:layout_below="@+id/name_classic4"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginTop="23dp"
@@ -194,11 +194,11 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="100dp"
-                    android:text="King Solomon's Mines by H. Rider Haggard and A. C. Michael"
+                    android:text="American Indian Stories, Legends, and Other Writings by Zitkála-Šá"
                     android:textColor="@color/black"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
-                    android:id="@id/name_adventure4"
+                    android:id="@id/name_classic4"
                     android:textSize="12sp"
                     android:layout_centerHorizontal="true"
                     android:fontFamily="@font/lobster"/>
@@ -221,12 +221,12 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentLeft="true"
-                    android:src="@drawable/adven5" />
+                    android:src="@drawable/classic5" />
 
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
-                    android:layout_below="@+id/name_adventure5"
+                    android:layout_below="@+id/name_classic5"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginTop="23dp"
@@ -238,11 +238,11 @@ Luckily, we’ve made the act of finding action easy for you! We have 100 of the
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="100dp"
-                    android:text="Journey to the Center of the Earth by Jules Verne"
+                    android:text="And Then There Were None by Agatha Christie"
                     android:textColor="@color/black"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
-                    android:id="@id/name_adventure5"
+                    android:id="@id/name_classic5"
                     android:textSize="12sp"
                     android:layout_centerHorizontal="true"
                     android:fontFamily="@font/lobster"/>

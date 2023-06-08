@@ -41,27 +41,27 @@ public class ThrillerBooksActivity extends AppCompatActivity implements View.OnC
 
         switch (v.getId()) {
             case R.id.cv1:
-                i = new Intent(ThrillerBooksActivity.this, AdventureBooksActivity.class);
+                i = new Intent(ThrillerBooksActivity.this, ThrillerBook1Activity.class);
                 startActivity(i);
                 break;
 
             case R.id.cv2:
-                i = new Intent(ThrillerBooksActivity.this, ClassicBooksActivity.class);
+                i = new Intent(ThrillerBooksActivity.this, ThrillerBook2Activity.class);
                 startActivity(i);
                 break;
 
             case R.id.cv3:
-                i = new Intent(ThrillerBooksActivity.this, ComicBooksActivity.class);
+                i = new Intent(ThrillerBooksActivity.this, ThrillerBook3Activity.class);
                 startActivity(i);
                 break;
 
             case R.id.cv4:
-                i = new Intent(ThrillerBooksActivity.this, CrimeBooksActivity.class);
+                i = new Intent(ThrillerBooksActivity.this, ThrillerBook4Activity.class);
                 startActivity(i);
                 break;
 
             case R.id.cv5:
-                i = new Intent(ThrillerBooksActivity.this, DramaBooksActivity.class);
+                i = new Intent(ThrillerBooksActivity.this, ThrillerBook5Activity.class);
                 startActivity(i);
                 break;
 

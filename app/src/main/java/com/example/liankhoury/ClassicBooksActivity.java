@@ -38,11 +38,11 @@ public class ClassicBooksActivity extends AppCompatActivity {
 
         fav = getDrawable(R.drawable.ic_baseline_favorite_24);
 
-        cardV1.setOnClickListener(this);
-        cardV2.setOnClickListener(this);
-        cardV3.setOnClickListener(this);
-        cardV4.setOnClickListener(this);
-        cardV5.setOnClickListener(this);
+        cardV1.setOnClickListener((View.OnClickListener) this);
+        cardV2.setOnClickListener((View.OnClickListener) this);
+        cardV3.setOnClickListener((View.OnClickListener) this);
+        cardV4.setOnClickListener((View.OnClickListener) this);
+        cardV5.setOnClickListener((View.OnClickListener) this);
 
         add_to_fav1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,7 +82,6 @@ public class ClassicBooksActivity extends AppCompatActivity {
     }
 
 
-    @Override
     public void onClick(View v) {
         Intent i;
 
@@ -93,22 +92,22 @@ public class ClassicBooksActivity extends AppCompatActivity {
                 break;
 
             case R.id.cv2:
-                i = new Intent(ClassicBooksActivity.this, ClassicBook1Activity.class);
+                i = new Intent(ClassicBooksActivity.this, ClassicBook2Activity.class);
                 startActivity(i);
                 break;
 
             case R.id.cv3:
-                i = new Intent(ClassicBooksActivity.this, ClassicBook1Activity.class);
+                i = new Intent(ClassicBooksActivity.this, ClassicBook3Activity.class);
                 startActivity(i);
                 break;
 
             case R.id.cv4:
-                i = new Intent(ClassicBooksActivity.this, ClassicBook1Activity.class);
+                i = new Intent(ClassicBooksActivity.this, ClassicBook4Activity.class);
                 startActivity(i);
                 break;
 
             case R.id.cv5:
-                i = new Intent(ClassicBooksActivity.this, ClassicBook1Activity.class);
+                i = new Intent(ClassicBooksActivity.this, ClassicBook5Activity.class);
                 startActivity(i);
                 break;
 

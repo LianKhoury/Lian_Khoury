@@ -18,9 +18,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView_classic2_name"
+            android:id="@+id/textView_thriller4_name"
             android:layout_marginTop="30dp"
-            android:text="The Age of Innocence by Edith Wharton"
+            android:text="The Da Vinci Code"
             android:fontFamily="@font/lobster"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
@@ -31,16 +31,18 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:id="@+id/classic2"
-            android:src="@drawable/classic2"
-            android:layout_below="@+id/textView_classic2_name"
+            android:id="@+id/thriller4"
+            android:src="@drawable/Thriller4"
+            android:layout_below="@+id/textView_thriller4_name"
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Newland Archer, one of 1900s New York’s most eligible bachelors, has been looking for a traditional wife, and May Welland seems just the girl — that is until Newland meets entirely unsuitable Ellen Olenska. He must now choose between the two women — and between old money prestige and a value that runs deeper than social etiquette."
-            android:layout_below="@id/classic2"
+            android:text="While in Paris, Harvard symbologist Robert Langdon is awakened by a phone call in the dead of the night. The elderly curator of the Louvre has been murdered inside the museum, his body covered in baffling symbols. As Langdon and gifted French cryptologist Sophie Neveu sort through the bizarre riddles, they are stunned to discover a trail of clues hidden in the works of Leonardo da Vinci—clues visible for all to see and yet ingeniously disguised by the painter.
+Even more startling, the late curator was involved in the Priory of Sion—a secret society whose members included Sir Isaac Newton, Victor Hugo, and Da Vinci—and he guarded a breathtaking historical secret. Unless Langdon and Neveu can decipher the labyrinthine puzzle—while avoiding the faceless adversary who shadows their every move—the explosive, ancient truth will be lost forever."
+            android:layout_below="@id/thriller4"
+            android:textSize="12sp"
             android:layout_marginTop="15dp"
             />
     </RelativeLayout>
