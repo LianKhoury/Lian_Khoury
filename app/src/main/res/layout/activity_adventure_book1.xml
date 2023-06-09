@@ -45,6 +45,45 @@
             />
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/cAvatarIv"
+            android:src="@drawable/ic_baseline_add_comment_24"
+            android:padding="10dp"/>
+
+        <EditText
+            android:id="@+id/comment_ET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/cAvatarIv"
+            android:layout_toRightOf="@id/cAvatarIv"
+            android:padding="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/sendButton"
+            android:hint="Enter comment..."
+            android:inputType="textCapSentences|textMultiLine"
+            android:layout_toLeftOf="@id/sendButton"
+            android:layout_margin="1dp"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@null"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_send_24"
+            android:layout_height="wrap_content"
+            android:id="@+id/sendButton"
+            android:layout_alignParentRight="true"/>
+
+
+
+    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
