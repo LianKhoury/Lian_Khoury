@@ -1,7 +1,7 @@
 package com.example.liankhoury;
 
 public class ReadWriteUserDetails {
-    public String fullName,phone;
+    public String phone;
 
     //Constructor
     public ReadWriteUserDetails(){};

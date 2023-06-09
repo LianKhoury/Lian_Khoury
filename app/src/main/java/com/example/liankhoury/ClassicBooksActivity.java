@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class ClassicBooksActivity extends AppCompatActivity {
+public class ClassicBooksActivity extends AppCompatActivity implements View.OnClickListener {
 
     private CardView cardV1, cardV2, cardV3, cardV4, cardV5;
     private ImageButton add_to_fav1, add_to_fav2, add_to_fav3, add_to_fav4, add_to_fav5;
@@ -38,11 +38,11 @@ public class ClassicBooksActivity extends AppCompatActivity {
 
         fav = getDrawable(R.drawable.ic_baseline_favorite_24);
 
-        cardV1.setOnClickListener((View.OnClickListener) this);
-        cardV2.setOnClickListener((View.OnClickListener) this);
-        cardV3.setOnClickListener((View.OnClickListener) this);
-        cardV4.setOnClickListener((View.OnClickListener) this);
-        cardV5.setOnClickListener((View.OnClickListener) this);
+        cardV1.setOnClickListener(this);
+        cardV2.setOnClickListener(this);
+        cardV3.setOnClickListener(this);
+        cardV4.setOnClickListener(this);
+        cardV5.setOnClickListener(this);
 
         add_to_fav1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +82,7 @@ public class ClassicBooksActivity extends AppCompatActivity {
     }
 
 
+    @Override
     public void onClick(View v) {
         Intent i;
 
@@ -112,5 +113,10 @@ public class ClassicBooksActivity extends AppCompatActivity {
                 break;
 
         }
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 }
