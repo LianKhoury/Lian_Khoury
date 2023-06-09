@@ -8,7 +8,7 @@
     android:background="#22EAD9"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".WelcomeActivity">
+    tools:context=".CrimeBooksActivity">
 
 
     <RelativeLayout

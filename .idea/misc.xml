@@ -10,7 +10,10 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.106" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/drawable/notification_icon.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_about.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_adventure_book1.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_adventure_book1.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_adventure_book2.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_adventure_book3.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_adventure_book5.xml" value="0.11041666666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_adventure_books.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_camera.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_classic_book1.xml" value="0.16145833333333334" />
@@ -56,7 +59,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_thriller_book2.xml" value="0.14739583333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_thriller_book3.xml" value="0.16145833333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_thriller_book4.xml" value="0.16145833333333334" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_thriller_book5.xml" value="0.4" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_thriller_book5.xml" value="0.21571428571428572" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_thriller_books.xml" value="0.2" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_update_profile.xml" value="0.1765625" />
         <entry key="..\:/Users/user/AndroidStudioProjects/LianKhoury/app/src/main/res/layout/activity_upload_profile_pic.xml" value="0.25" />
