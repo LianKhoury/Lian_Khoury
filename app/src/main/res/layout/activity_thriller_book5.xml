@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_below="@+id/textView_thriller5_name"
-            android:src="@drawable/Thriller5" />
+            android:src="@drawable/thriller5" />
 
         <TextView
             android:layout_width="match_parent"

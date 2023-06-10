@@ -67,17 +67,6 @@ public class UpdateProfileActivity extends AppCompatActivity {
             }
         });
 
-        // Update Email
-        /*Button buttonUpdateEmail = findViewById(R.id.button_profile_update_email);
-        buttonUpdateEmail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(UpdateProfileActivity.this,UpdateEmailActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });*/
-
         // Update Profile
         Button buttonUpdateProfile = findViewById(R.id.button_update_profile);
         buttonUpdateProfile.setOnClickListener(new View.OnClickListener() {
