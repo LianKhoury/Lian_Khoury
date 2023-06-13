@@ -20,7 +20,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
@@ -151,7 +150,7 @@ public class RegisterActivity extends AppCompatActivity {
                             firebaseUser.updateProfile(profileChangeRequest);
 
                             // Enter User data into the Firebase Realtime Database
-                            ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(textPhoneNum);
+                            ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(textPhoneNum,textFullName);
 
                             //Extracting User Data into the firebase Realtime Database.
                             DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Registered User");

@@ -1,21 +1,30 @@
 package com.example.liankhoury;
 
 public class ReadWriteUserDetails {
-    private String textPhoneNum;
+    private String phone, name;
 
     public ReadWriteUserDetails() {
         // Default constructor required for Firebase Realtime Database
     }
 
-    public ReadWriteUserDetails(String textPhoneNum) {
-        this.textPhoneNum = textPhoneNum;
+    public ReadWriteUserDetails(String phone, String name) {
+        this.phone = phone;
+        this.name = name;
     }
 
-    public String getTextPhoneNum() {
-        return textPhoneNum;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setTextPhoneNum(String textPhoneNum) {
-        this.textPhoneNum = textPhoneNum;
+    public String getName() {
+        return name;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

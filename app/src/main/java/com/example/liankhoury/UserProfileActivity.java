@@ -1,16 +1,9 @@
 package com.example.liankhoury;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NavUtils;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +12,12 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -29,8 +28,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-import java.util.concurrent.locks.ReadWriteLock;
-
 public class UserProfileActivity extends AppCompatActivity {
 
     private TextView TextViewProfile,textViewFullName,textViewEmail,textViewPhoneNum;
@@ -39,6 +36,8 @@ public class UserProfileActivity extends AppCompatActivity {
     private ImageView imageView;
     private FirebaseAuth authProfile;
     private SwipeRefreshLayout swipeContainer;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -148,11 +147,11 @@ public class UserProfileActivity extends AppCompatActivity {
                 // Log the value of the "phone" field
                 String phone = snapshot.child("phone").getValue(String.class);
 
-                ReadWriteUserDetails readUserDetails = new ReadWriteUserDetails(phone);
+                ReadWriteUserDetails readUserDetails = new ReadWriteUserDetails(textViewFullName.getText().toString(), textViewPhoneNum.getText().toString());
                 if (readUserDetails != null) {
                     FullName = firebaseUser.getDisplayName();
                     email = firebaseUser.getEmail();
-                    phoneNum = readUserDetails.phone;
+                    phoneNum = readUserDetails.getPhone();
 
                     TextViewProfile.setText("Welcome," + FullName + "!");
                     textViewFullName.setText(FullName);
@@ -177,6 +176,7 @@ public class UserProfileActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
             }
         });
+
     }
 
     // Creating ActionBar Menu

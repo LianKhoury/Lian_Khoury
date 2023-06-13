@@ -1,13 +1,8 @@
 package com.example.liankhoury;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NavUtils;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Patterns;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -109,7 +108,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
             textPhoneNum = editTextUpdatePhone.getText().toString();
 
             // Enter User Data into the FireBase Realtime DataBase. Set up dependencies
-            ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(textPhoneNum);
+            ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(textPhoneNum,textFullName);
 
             // Enter User reference from DataBase for "Registered Users"
             DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Registered Users");
@@ -163,7 +162,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
                 ReadWriteUserDetails readUserDetails = snapshot.getValue(ReadWriteUserDetails.class);
                 if (readUserDetails != null) {
                     textFullName = firebaseUser.getDisplayName();
-                    textPhoneNum = readUserDetails.phone;
+                    textPhoneNum = readUserDetails.getPhone();
 
                     editTextUpdateName.setText(textFullName);
                     editTextUpdatePhone.setText(textPhoneNum);

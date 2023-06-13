@@ -1,10 +1,5 @@
 package com.example.liankhoury;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
-import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -13,14 +8,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.GridLayout;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -84,10 +76,33 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
 
     }
 
-    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_example, menu);
-        return true;
+    // Creating ActionBar Menu
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate menu items
+        getMenuInflater().inflate(R.menu.menu_example,menu);
+        return super.onCreateOptionsMenu(menu);
     }
+
+    // When any menu item is selected
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if( id == R.id.about_menu){
+            Intent intent = new Intent(WelcomeActivity.this,AboutActivity.class);
+            startActivity(intent);        }
+        else if (id == R.id.help_menu){
+            Intent intent = new Intent(WelcomeActivity.this,HelpActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.profile_menu){
+            Intent intent = new Intent(WelcomeActivity.this,UserProfileActivity.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(WelcomeActivity.this,"Something went wrong!", Toast.LENGTH_LONG).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     @Override
     public void onPointerCaptureChanged ( boolean hasCapture){
         super.onPointerCaptureChanged(hasCapture);}
